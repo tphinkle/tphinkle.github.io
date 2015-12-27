@@ -13,11 +13,11 @@ A place to include any other types of information that you'd like to include abo
 ### Contact me
 
 
-![email](https://tphinkle.github.io/images/google_32.png)
+![email](https://tphinkle.github.io/images/google_16.png)
 tphinkle@gmail.com
 
-![twitter](https://tphinkle.github.io/images/twitter_32.png)
+![twitter](https://tphinkle.github.io/images/twitter_16.png)
 @tphinkle
 
-![github](https://tphinkle.github.io/images/github_32.png)
+![github](https://tphinkle.github.io/images/github_16.png)
 github.com/tphinkle
