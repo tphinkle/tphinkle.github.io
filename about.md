@@ -13,5 +13,5 @@ A place to include any other types of information that you'd like to include abo
 ### Contact me
 
 
-![email](https://github.com/tphinkle/tphinkle.github.io/assets/google.png "email")
+![email]({{ tphinkle.github.io }}/assets/google.png)
 tphinkle@gmail.com
