@@ -6,7 +6,7 @@ title: Data science monthly write-up--Kaggle digit recognition competition
 #Introduction
 In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com), using machine learning to recognize different digitalized hand written numbers. The goal is to accurately recognize hand-written digits, which have been digitally rendered as two-dimensional gray scale matrices. 
 
-Here's a two:
+Here's a matrix-representation of one of the elemenets in the data set provided:
 
 ![a two](https://tphinkle.github.io/images/2015-12-27/two_gs_0.png)
 
@@ -43,15 +43,34 @@ Here's what the distance-matrix looks like for the two fives from above:
 
 There are a few requirements that the minimal cost path must satisfy. They are:
 
-1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix.
+1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix. If the two time-series have m and n data points respectively, the path must pass through the points (0,0) and (m,n).
 2. The path through the matrix must monotonically progress towards the end-point, i.e., if (i,j) is a point along the path, the subsequent step cannot be any of (i-1,j), (i,j-1), or (i-1,j-1).
 
-We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path. As the name of the algorithm suggests, we solve for the minimum cost path dynamically. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the desired cost path at (m, n) by starting at (0, 0) and calculating the cost paths for (1,0), (0,1), (1,1), (2,1), ..., (m, n). Finally, we can determine the mapping itself iteratively.
+We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path? As the name of the algorithm suggests, we solve for the minimum cost path *dynamically*. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the desired cost path at (m, n) by starting at (0, 0) and calculating the cost paths for (1,0), (0,1), (1,1), (2,1), ..., (m, n). 
 
 Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
 ```
-cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
+for all (i,j) in mxn:
+    cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
 ```
+
+The "distance" then between the two time-series is given by cost_{m,n}. 
+
+Finally, we can determine the mapping itself (the path through the distance and cost matrices) by starting at the end point (m,n) and 'descending' to (0,0) by stepping to the matrix element with the lowest cost. Below we have the distance matrix, cost matrix, and plots of the two time-series showing the warping that the algorithm has provided. Note the difference between the non-warping and warping plots.
+
+![Full DTW solution](https://tphinkle.github.io/images/2015-12-27/all_plots.png)
+
+The above algorithm described how to calculate the difference between two digits. The kaggle competition asked for us to determine which digit a digit was from the test set. To do this, I calculated the sum of the DTW distances between the given test digit and a set of k training samples for each digit. The determined character then is the minimum of those DTW distances.
+
+Here are the results of the algorithm:
+
+By the way, the above approach was the simplest application of DTW. Other flavors of DTW exist including Derivative DTW (DDTW) and Weighted DTW (WDTW). If you're interested in learning more about DTW, I suggest visiting (http://www.cs.ucr.edu/~eamonn/)[Keough's page], who has done a lot of work on refining the method. In particular, I found (https://www.cs.rutgers.edu/~mlittman/courses/lightai03/DDTW-2001.pdf)[this paper] helpful.
+
+
+
+
+
+
 
    
 
