@@ -49,7 +49,9 @@ There are a few requirements that the minimal cost path must satisfy. They are:
 We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path. As the name of the algorithm suggests, we solve for the minimum cost path dynamically. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the desired cost path at (m, n) by starting at (0, 0) and calculating the cost paths for (1,0), (0,1), (1,1), (2,1), ..., (m, n). Finally, we can determine the mapping itself iteratively.
 
 Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
-```cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
+```
+cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
+```
 
    
 
