@@ -19,9 +19,13 @@ To solve the challenge, I tried two different solutions. The first solution uses
 
 Dynamic time warping is an algorithm used to determine how similar two data sets are. The method is usually used to compare time-series data, and in fact, was developed in the 70's primarily for the purpose of speech recognition. The data doesn't have to be a time-series, though; actually, all that is required is that we are able to represent each data set as x-y data, or a set of pairs of data points. The x-coordinate should be viewed as the time dimension.
 
-There is more than one way to convert the character's matrix representation to an x-y representation. I chose to find the lowest-left most point in the matrix, and "walk" around the character. Each step in the walk produces two data sets, with the x-values in both sets corresponding to that step in the walk, and the y-values the row and column of that particular data step.
+There is more than one way to convert the character's matrix representation to an x-y representation. First, I converted the grayscale representation of each character to a black/white representation. To convert to the x-y representation, I chose to find the lowest-left most point in the matrix, and "walk" around the character. Each step in the walk produces two data sets, with the x-values in both sets corresponding to that step in the walk, and the y-values the row and column of that particular data step.
 
-Here's what that transformation looks like:
+Here's what the representation change looks like:
+
+
+
+
 
 
 
