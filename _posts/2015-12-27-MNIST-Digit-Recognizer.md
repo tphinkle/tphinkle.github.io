@@ -23,6 +23,8 @@ There is more than one way to convert the character's matrix representation to a
 
 Here's what the representation change looks like:
 
+![Digit representation change](https://tphinkle.github.io/images/2015-12-27/representation_transformation.png)
+
 
 
 
