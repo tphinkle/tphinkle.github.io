@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data science monthly write-up--MNIST digit recognition Kaggle competition
+title: Data science monthly write-up--Kaggle digit recognition competition
 ---
 
 #Introduction
@@ -15,7 +15,9 @@ This was my first foray into solving a data-sciency problem on my own (i.e., not
 
 To solve the challenge, I tried two different solutions. The first solution uses an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) and the second solution uses [soft-max regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/), a generalization of logistic regression to allow for more than two classifications. I'll do my best to explain how each method works, summarize the code that I wrote to run the method, and finally discuss the results of each method.
 
-#Dynamic time warping
+[Part 1](https://tphinkle.github.io/)
+
+##Part 1: Dynamic time warping
 
 Dynamic time warping is an algorithm used to determine how similar two data sets are. The method is usually used to compare time-series data, and in fact, was developed in the 70's primarily for the purpose of speech recognition. The data doesn't have to be a time-series, though; actually, all that is required is that we are able to represent each data set as x-y data, or a set of pairs of data points. The x-coordinate should be viewed as the time dimension, and in this tutorial I will refer to the x-y representation as a time-series representation.
 
@@ -44,12 +46,17 @@ There are a few requirements that the minimal cost path must satisfy. They are:
 1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix.
 2. The path through the matrix must monotonically progress towards the end-point, i.e., if (i,j) is a point along the path, the subsequent step cannot be any of (i-1,j), (i,j-1), or (i-1,j-1).
 
-We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path. As the name of the algorithm suggests, we solve for the minimum cost path dynamically.
+We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path. As the name of the algorithm suggests, we solve for the minimum cost path dynamically. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the desired cost path at (m, n) by starting at (0, 0) and calculating the cost paths for (1,0), (0,1), (1,1), (2,1), ..., (m, n). Finally, we can determine the mapping itself iteratively.
+
+Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
+	cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
+
+   
 
 
 
 
 
 
-#Soft-max regression (~logistic regression)
+##Soft-max regression (~logistic regression)
 
