@@ -31,7 +31,20 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 ![No-warping Euclidean distance metric](https://tphinkle.github.io/images/2015-12-27/nowarp_distance_0.png)
 
+Looking at the time-series representations of the two fives, we can see that they are similar. The Euclidean distance metric in the absence of warping however inflates the difference between the two series, however. For example, look at the bottom most interval of each plot. The two are similar, but because of a small phase-shift along the time axis, the distance at that interval is exaggerated. We would like to apply some transformation to the data that allows the time-axis to be more fluid, allowing for reasonable warping so that the best matching is determined between pairs. This is where dynamic time warping comes in.
 
+The key behind dynamic time warping is to construct a matrix of the distance between all pairs of data points between the two time series. Then, the proper time-warping alluded to above is given by the path for which the cumulative distance along that path is minimized. We call the cumulative distance along any particular path the *cost* of that path.
+
+Here's what the distance-matrix looks like for the two fives from above:
+
+![Distance matrix](https://tphinkle.github.io/images/2015-12-27/distance_matrix_0.png)
+
+There are a few requirements that the minimal cost path must satisfy. They are:
+
+1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix.
+2. The path through the matrix must monotonically progress towards the end-point, i.e., if (i,j) is a point along the path, the subsequent step cannot be any of (i-1,j), (i,j-1), or (i-1,j-1).
+
+We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path. As the name of the algorithm suggests, we solve for the minimum cost path dynamically.
 
 
 
