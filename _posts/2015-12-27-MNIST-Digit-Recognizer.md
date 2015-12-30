@@ -8,7 +8,7 @@ In this post I'll write about my attempt at the [digit recognition Kaggle compet
 
 Here's a two:
 
-![a two](https://tphinkle.github.io/images/2015-27-12/two_gs_0.png)
+![a two](https://tphinkle.github.io/images/2015-12-27/two_gs_0.png)
 
 
 This was my first foray into solving a data-sciency problem on my own (i.e., not as part of a class), so I didn't expect a great score starting out. In fact, the two methods I employed probably aren't the best for the job, and I didn't want to use any pre-existing packages. Of course, there are packages out there that could probably score me a 99% on the recognition test in just a few lines of my own code, but that's not the point. 
