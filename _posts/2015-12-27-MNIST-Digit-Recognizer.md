@@ -51,7 +51,9 @@ We now know the purpose of the time warping and the requirements that the minimu
 Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
 ```
 for all (i,j) in mxn:
-    cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
+
+
+cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
 ```
 
 The "distance" then between the two time-series is given by cost_{m,n}. 
@@ -64,7 +66,7 @@ The above algorithm described how to calculate the difference between two digits
 
 Here are the results of the algorithm:
 
-By the way, the above approach was the simplest application of DTW. Other flavors of DTW exist including Derivative DTW (DDTW) and Weighted DTW (WDTW). If you're interested in learning more about DTW, I suggest visiting (http://www.cs.ucr.edu/~eamonn/)[Keough's page], who has done a lot of work on refining the method. In particular, I found (https://www.cs.rutgers.edu/~mlittman/courses/lightai03/DDTW-2001.pdf)[this paper] helpful.
+By the way, the above approach was the simplest application of DTW. Other flavors of DTW exist including Derivative DTW (DDTW) and Weighted DTW (WDTW). If you're interested in learning more about DTW, I suggest visiting [Keough's page](http://www.cs.ucr.edu/~eamonn/), who has done a lot of work on refining the method. In particular, I found [this paper](https://www.cs.rutgers.edu/~mlittman/courses/lightai03/DDTW-2001.pdf) helpful.
 
 
 
