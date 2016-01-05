@@ -37,6 +37,8 @@ $a+b=c$
 
 LATEX:     distance = sum(all i) (ai-bi)
 
+update
+
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
 
 ![No-warping Euclidean distance metric](https://tphinkle.github.io/images/2015-12-27/nowarp_distance_0.png)
