@@ -83,8 +83,8 @@ The above algorithm described how to calculate the difference between two digits
 
 Here are the results of the algorithm:
 
-| Test digit          | Correct predictions | Total predictions |
-| ------------------- |:-------------------:| -----------------:|
+| Test digit          | Correct predictions | Total predictions | Ratio        |
+| ------------------- |:-------------------:|:-----------------:|-------------:|
 | 0                   |                     |                   |
 | 1
 | 2
@@ -95,6 +95,9 @@ Here are the results of the algorithm:
 | 7
 | 8
 | 9
+| total
+
+It look ____ hours to classify the above 100 digits using 100 training examples.
 
 By the way, the above approach was the simplest application of DTW. Other flavors of DTW exist including Derivative DTW (DDTW) and Weighted DTW (WDTW). If you're interested in learning more about DTW, I suggest visiting [Prof. Keough's page](http://www.cs.ucr.edu/~eamonn/), who has done a lot of work on refining the method. In particular, I found [this paper](https://www.cs.rutgers.edu/~mlittman/courses/lightai03/DDTW-2001.pdf) helpful.
 
