@@ -46,7 +46,7 @@ We start with DTW by constructing a matrix of the distance between *all* pairs o
 
 $$ 
 \begin{align*}
-	& D_{i,j} = (y_{1, i}^{2}-y_{2, j}\right)^{1/2}
+	& D_{i,j} = \left(y_{1, i}^{2}-y_{2, j}\right)^{1/2}
 \end{align*}
 $$
 
