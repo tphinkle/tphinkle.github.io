@@ -21,16 +21,16 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $$ 
 \begin{align*}
-	& C = \sum_{i}^{m}\left(y_{1, i}^{2}-y_{2, i}^{2}\right) ^{1/2}
+	& C = \sum_{i}^{m}\sqrt{left(y_{1, i}-y_{2, i}\right)^{2}}
 \end{align*}
 $$
 
 
- The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
+ The more similar the two time series are, the lower this cumulative difference is. A small y-offset was applied to one of the signals for better visualization.
 
 ![No-warping Euclidean distance metric](https://tphinkle.github.io/images/2015-12-27/nowarp_distance_0.png)
 
-Looking at the time-series representations of the two fives, we can see that they are similar, but not quite aligned in the time-axis. For example, a much better fit could be achieved if only we were allowed to just slightly shift the bottom most data points in the lower time-series to the left. DTW is an algorithm that allows for this type of 'warping' of the time axis so as to minimize the cumulative distance between two time series. It also has the advantage that the time-series do not need to have the same number of data points.
+Looking at the time-series representations of the two fives, we can see that they are similar, but not quite aligned in the time-axis. For example, a much better fit could be achieved if only we were allowed to just slightly shift the bottom most data points in the lower time-series to the left. DTW is an algorithm that allows for a non-linear 'warping' of the time axis so as to minimize the cumulative distance between two time series. It also has the advantage that the time-series do not need to have the same number of data points.
 
 We start with DTW by constructing a matrix of the distance between *all* pairs of data points between the two time series. 
 
@@ -48,20 +48,28 @@ Our goal is to find a path through this matrix that has the lowest cumulative di
 
 There are a few requirements that the minimal cost path must satisfy. They are:
 
-1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix. If the two time-series have m and n data points respectively, the path must pass through the points (0,0) and (m-1,n-1).
-2. The path through the matrix must monotonically progress towards the end-point, i.e., if (i,j) is a point along the path, the subsequent step cannot be any of (i-1,j), (i,j-1), or (i-1,j-1).
+1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix. If the two time-series have m and n data points respectively, the path must pass through the points (0, 0) and (m-1, n-1).
+2. The path through the matrix must monotonically progress towards the end-point, i.e., if (i, j) is a point along the path, the subsequent step cannot be any of (i-1, j), (i, j-1), or (i-1, j-1).
 3. Optional constraints:
-    -If we don't want to allow any extreme warping to happen (i.e., large time distance between matched data points) we can impose restrictions on where the warping path is allowed to go in the matrix. 
-    -Similarly, we can impose a constraint on the maximum number of points a single point can be connected to.
+    -If we don't want to allow any extreme warping to happen (i.e., large time distance between matched data points) we can impose restrictions on where the warping path is allowed to go in the matrix.
+    -A constraint on the maximum number of points a single point can be connected to.
 
 
-We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path? As the name of the algorithm suggests, we solve for the minimum cost path *dynamically*. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the minimum cost to get to (m-1, n-1) by starting at (0, 0) and calculating the minimum costs for (1,0), (0,1), (1,1), (2,1), ..., (m-1, n-1). Note that this does not yield the path itself (we can calculate that after), but it does give us the cost of the optimal warping.
+We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path? As the name of the algorithm suggests, we solve for the minimum cost path *dynamically*. The key is this: the minimum cost path between points (0, 0) and (i, j) must pass through (i-1, j), (i-1, j-1), or (i, j-1) (property 2 above). This means we can iteratively calculate the minimum cost to get to (m-1, n-1) by starting at (0, 0) and calculating the minimum costs for paths starting at (0, 0) and ending at (1, 0), (0, 1), (1, 1), (2, 1), ..., (m-1, n-1). Note that this does not yield the path itself (we can calculate that after), but it does give us the cost of the optimal warping.
+{: .language-ruby}
+Here's some Python style pseudo-code for calculating the cost of the minimum cost path to (m-1, n-1):
 
-Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
+~~~~~~~
+def distance(a, b):
+	return abs(a-b)
 
-```python
-cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
-```
+cost_matrix = np.zeros((m, n))
+cost_matrix[0, 0] = abs(y1[0] - y2[0])
+for i in range(m):
+	for j in range(n):
+		cost_matrix[i, j] = distance(y1[i], y2[j]) + minimum(cost_matrix[i-1, j], cost_matrix[i-1, j-1], cost_matrix[i, j-1])
+~~~~~~~
+{: .language-python}
 
 The measure of how well the two signals match is then given by $cost_{m,n}$. 
 
