@@ -4,38 +4,44 @@ title: Data science monthly write-up--Kaggle digit recognition competition
 ---
 
 #Introduction
-In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com), using machine learning to recognize different digitalized hand written numbers. The goal is to accurately recognize hand-written digits, which have been digitally rendered as two-dimensional gray scale matrices. 
+In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com). The goal is to accurately recognize single hand-written digits, which are provided as two-dimensional grayscale images. Each pixel element is an integer value in the range [0, 255] ([black, white]). 
 
-Here's a matrix-representation of one of the elemenets in the data set provided:
+Here's a two from that data set:
 
 ![a two](https://tphinkle.github.io/images/2015-12-27/two_gs_0.png)
 
-
-This was my first foray into solving a data-sciency problem on my own (i.e., not as part of a class), so I didn't expect a great score starting out. In fact, the two methods I employed probably aren't the best for the job, and I didn't want to use any pre-existing packages. Of course, there are packages out there that could probably score me a 99% on the recognition test in just a few lines of my own code, but that's not the point. 
-
-To solve the challenge, I tried two different solutions. The first solution uses an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) and the second solution uses [soft-max regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/), a generalization of logistic regression to allow for more than two classifications. I'll do my best to explain how each method works, summarize the code that I wrote to run the method, and finally discuss the results of each method.
+To solve the challenge, I tried two different approaches. The first approach uses an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) and the second uses [soft-max regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/), a generalization of logistic regression to allow for more than two classifications. In this post, I'll do my best to explain how each method works and describe how successful my implementations of each were in recognizing digits.
 
 [Part 1](https://tphinkle.github.io/)
 
 ##Part 1: Dynamic time warping
 
-Dynamic time warping is an algorithm used to determine how similar two data sets are. The method is usually used to compare time-series data, and in fact, was developed in the 70's primarily for the purpose of speech recognition. The data doesn't have to be a time-series, though; actually, all that is required is that we are able to represent each data set as x-y data, or a set of pairs of data points. The x-coordinate should be viewed as the time dimension, and in this tutorial I will refer to the x-y representation as a time-series representation.
+Dynamic time warping is an algorithm used to quantify how similar two signals are. The method is usually used to compare time-series data, and in fact, was developed in the 70's primarily for the purpose of speech recognition. The data doesn't have to be a time-series, though; actually, all that is required is that we are able to represent our data in some way as x-y data. For brevity and for historical reasons, I'll refer to the x-y representation of the data as a time series, even though it is not what we would traditionally view as a time-series.
 
-There is more than one way to convert the character's matrix representation to an x-y representation. First, I converted the grayscale representation of each character to a black/white representation. To convert to the x-y representation, I chose to find the lowest-left most point in the matrix, and "walk" around the character. Each step in the walk produces two data sets, with the x-values in both sets corresponding to that step in the walk, and the y-values the row and column of that particular data step.
+Right now you may be scratching your head--how do we get a time-series out of our data type, a grayscale image with pixel values? First, I converted the grayscale representation of each character to a black/white representation; the digit still retains its identity as a black and white image. To create a time-series of the image, I "walked" around the digit, following its perimeter. By recording the row and column of our position in the matrix at each step in the walk, we get two different time series.
 
 Here's what the representation change looks like:
 
 ![Digit representation change](https://tphinkle.github.io/images/2015-12-27/representation_transformation.png)
 
-Remember, each character matrix is actually converted to two x-y datasets, one for the row values along the path and the other for the columns. Now that we have the representation transformation down, we need to quantitatively calculate the 'difference' between different characters. This is where DTW comes in.
+Remember, each character matrix is actually transformed into two time-series, one for the row values along the path and the other for the columns. Now that we have the representation transformation down, we need to quantitatively calculate the 'difference' between different characters' time series. 
 
-The simplest way to quantify the difference between two time-series is via a simple Euclidean distance metric. Basically, we take the two time-series, align them on the x-axis, and sum the differences between every two pairs of points in the data set. The following image shows a visualization of the difference. 
+The simplest way to quantify the difference between two time-series is via a simple time-aligned Euclidean distance metric. Simply put, we take the two time-series, align them on the time-axis, and sum the distance between every pair of aligned points in the data set.
+
+$$\text{distance} = a + b$$
+LATEX:     distance = sum(all i) (ai-bi)
+
+ The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
 
 ![No-warping Euclidean distance metric](https://tphinkle.github.io/images/2015-12-27/nowarp_distance_0.png)
 
-Looking at the time-series representations of the two fives, we can see that they are similar. The Euclidean distance metric in the absence of warping however inflates the difference between the two series, however. For example, look at the bottom most interval of each plot. The two are similar, but because of a small phase-shift along the time axis, the distance at that interval is exaggerated. We would like to apply some transformation to the data that allows the time-axis to be more fluid, allowing for reasonable warping so that the best matching is determined between pairs. This is where dynamic time warping comes in.
+Looking at the time-series representations of the two fives, we can see that they are similar, but not quite aligned in the time-axis. For example, a much better fit could be achieved if only we were allowed to just slightly shift the bottom most data points in the lower time-series to the left. DTW is an algorithm that allows for this type of 'warping' of hte time axis so as to minimize the cumulative distance between two time series.
 
-The key behind dynamic time warping is to construct a matrix of the distance between all pairs of data points between the two time series. Then, the proper time-warping alluded to above is given by the path for which the cumulative distance along that path is minimized. We call the cumulative distance along any particular path the *cost* of that path.
+The key behind dynamic time warping is to construct a matrix of the distance between *all* pairs of data points between the two time series. 
+
+LATEX:     matrix_i,j = ai-bj for all i all j
+
+Then, the proper time-warping alluded to above is given by the path for which the cumulative distance along that path is minimized. We call the cumulative distance along any particular path the *cost* of that path.
 
 Here's what the distance-matrix looks like for the two fives from above:
 
