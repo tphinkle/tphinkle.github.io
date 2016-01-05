@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Data science monthly write-up--Kaggle digit recognition competition
+use-math: true
 ---
 
 #Introduction
@@ -29,6 +30,9 @@ Remember, each character matrix is actually transformed into two time-series, on
 The simplest way to quantify the difference between two time-series is via a simple time-aligned Euclidean distance metric. Simply put, we take the two time-series, align them on the time-axis, and sum the distance between every pair of aligned points in the data set.
 
 {% $$\text{distance} = a + b$$ %}
+
+
+$a+b=c$
 
 LATEX:     distance = sum(all i) (ai-bi)
 
