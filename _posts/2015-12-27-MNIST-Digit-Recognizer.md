@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Data science monthly write-up--Kaggle digit recognition competition
-use-math: true
 ---
 
 #Introduction
@@ -37,7 +36,7 @@ $a+b=c$
 
 LATEX:     distance = sum(all i) (ai-bi)
 
-update
+update2
 
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
 
