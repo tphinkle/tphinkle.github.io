@@ -21,7 +21,7 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $$ 
 \begin{align*}
-	& C = \sum_{i}^{m}\sqrt{left(y_{1, i}-y_{2, i}\right)^{2}}
+	& C = \sum_{i=0}^{m-1}  \sqrt{  \left(    y_{1, i}-y_{2, i}    \right)^{2}  }
 \end{align*}
 $$
 
