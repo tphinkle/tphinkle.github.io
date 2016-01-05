@@ -31,7 +31,7 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $$ 
 \begin{align*}
-	& C = \sum_{i}^{m}\left(y_{1, i}^{2}-y_{2, i}\right) ^{1/2}
+	& C = \sum_{i}^{m}\left(y_{1, i}^{2}-y_{2, i}^{2}\right) ^{1/2}
 \end{align*}
 $$
 
@@ -46,7 +46,7 @@ We start with DTW by constructing a matrix of the distance between *all* pairs o
 
 $$ 
 \begin{align*}
-	& D_{i,j} = \left(y_{1, i}^{2}-y_{2, j}\right)^{1/2}
+	& D_{i,j} = \left(y_{1, i}^{2}-y_{2, j}^{2}\right)^{1/2}
 \end{align*}
 $$
 
@@ -54,17 +54,18 @@ Here's what the distance-matrix looks like for the two fives from above:
 
 ![Distance matrix](https://tphinkle.github.io/images/2015-12-27/distance_matrix_0.png)
 
-Our goal is to find a path through this matrix that has the lowest cumulative distance; this path corresponds to the time warping that gives the best match between the two time series. The cumulative distance along nay particular path is called the *cost* of that path.
-
-
+Our goal is to find a path through this matrix that has the lowest cumulative distance; this path corresponds to the time warping that gives the best match between the two time series. The cumulative distance along any particular path is called the *cost* of that path.
 
 There are a few requirements that the minimal cost path must satisfy. They are:
 
 1. The beginning and end points of both series must match up. This means the past must path through the upper-left and lower-right corners of the above matrix. If the two time-series have m and n data points respectively, the path must pass through the points (0,0) and (m-1,n-1).
 2. The path through the matrix must monotonically progress towards the end-point, i.e., if (i,j) is a point along the path, the subsequent step cannot be any of (i-1,j), (i,j-1), or (i-1,j-1).
-3. If we don't want to allow any extreme warping to happen (i.e., large time distance between matched data points) we can impose restrictions on where the warping path is allowed to go in the matrix. 
+3. Optional constraints:
+    -If we don't want to allow any extreme warping to happen (i.e., large time distance between matched data points) we can impose restrictions on where the warping path is allowed to go in the matrix. 
+    -Similarly, we can impose a constraint on the maximum number of points a single point can be connected to.
 
-We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path? As the name of the algorithm suggests, we solve for the minimum cost path *dynamically*. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the desired cost path at (m-1, n-1) by starting at (0, 0) and calculating the cost paths for (1,0), (0,1), (1,1), (2,1), ..., (m-1, n-1). 
+
+We now know the purpose of the time warping and the requirements that the minimum cost path must satisfy, so how do we actually find that minimum path? As the name of the algorithm suggests, we solve for the minimum cost path *dynamically*. The key is this: the minimum cost path between points (0,0) and (i,j) must pass through (i-1,j), (i-1,j-1), or (i,j-1) (property 2 above). This means we can iteratively calculate the minimum cost to get to (m-1, n-1) by starting at (0, 0) and calculating the minimum costs for (1,0), (0,1), (1,1), (2,1), ..., (m-1, n-1). Note that this does not yield the path itself (we can calculate that after), but it does give us the cost of the optimal warping.
 
 Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
 
@@ -72,17 +73,30 @@ Here's the algorithm for calculating the cost of the minimum cost path to (i, j)
 cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
 ```
 
-The "distance" then between the two time-series is given by $cost_{m,n}$. 
+The measure of how well the two signals match is then given by $cost_{m,n}$. 
 
-Finally, we can determine the mapping itself (the path through the distance and cost matrices) by starting at the end point (m,n) and 'descending' to (0,0) by stepping to the matrix element with the lowest cost. Below we have the distance matrix, cost matrix, and plots of the two time-series showing the warping that the algorithm has provided. Note the difference between the non-warping and warping plots.
+Finally, we may want to look at what the optimal warp path actually looks like. The path is found by starting at the end point (m-1, n-1) and 'walking' to (0,0), at each step walking to the adjacent matrix element with the lowest minimum cost. Below we have the distance matrix, cost matrix, and plots of the two time-series showing the warping that the algorithm has provided. Note the difference between the non-warping and warping plots.
 
 ![Full DTW solution](https://tphinkle.github.io/images/2015-12-27/all_plots.png)
 
-The above algorithm described how to calculate the difference between two digits. The kaggle competition asked for us to determine which digit a digit was from the test set. To do this, I calculated the sum of the DTW distances between the given test digit and a set of k training samples for each digit. The determined character then is the minimum of those DTW distances.
+The above algorithm described how to calculate the difference between two digits. The kaggle competition asked for us to classify unknown digits from a test set. To do this, I calculated the sum of the DTW distances between the given test digit and a set of k training samples for each digit. The test digit is then classified by the k training samples with the lowest total (the best overall fit between all training examples).
 
 Here are the results of the algorithm:
 
-By the way, the above approach was the simplest application of DTW. Other flavors of DTW exist including Derivative DTW (DDTW) and Weighted DTW (WDTW). If you're interested in learning more about DTW, I suggest visiting [Keough's page](http://www.cs.ucr.edu/~eamonn/), who has done a lot of work on refining the method. In particular, I found [this paper](https://www.cs.rutgers.edu/~mlittman/courses/lightai03/DDTW-2001.pdf) helpful.
+| Test digit          | Correct predictions | Total predictions |
+| ------------------- |:-------------------:| -----------------:|
+| 0                   |                     |                   |
+| 1
+| 2
+| 3
+| 4
+| 5
+| 6
+| 7
+| 8
+| 9
+
+By the way, the above approach was the simplest application of DTW. Other flavors of DTW exist including Derivative DTW (DDTW) and Weighted DTW (WDTW). If you're interested in learning more about DTW, I suggest visiting [Prof. Keough's page](http://www.cs.ucr.edu/~eamonn/), who has done a lot of work on refining the method. In particular, I found [this paper](https://www.cs.rutgers.edu/~mlittman/courses/lightai03/DDTW-2001.pdf) helpful.
 
 
 
