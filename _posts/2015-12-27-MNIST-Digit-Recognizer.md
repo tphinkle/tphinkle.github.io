@@ -31,7 +31,7 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $$ 
 \begin{align*}
-	& C = \sum\displaylimits{_{i}^{m}}\left(y_{1, i}^{2}-y_{2, i}\right) ^{1/2}
+	& C = \sum_{i}^{m}\left(y_{1, i}^{2}-y_{2, i}\right) ^{1/2}
 \end{align*}
 $$
 
