@@ -5,7 +5,7 @@ use-math: true
 ---
 
 #Introduction
-In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com). The goal is to accurately recognize single hand-written digits, which are provided as two-dimensional grayscale images. Each pixel element is an integer value in the range (0,255).
+In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com). The goal is to accurately recognize single hand-written digits, which are provided as two-dimensional grayscale images. Each pixel element is an integer value in the range (0, 255).
 
 Here's a two from that data set:
 
@@ -29,7 +29,7 @@ Remember, each character matrix is actually transformed into two time-series, on
 
 The simplest way to quantify the difference between two time-series is via a simple time-aligned Euclidean distance metric. Simply put, we take the two time-series, align them on the time-axis, and sum the distance between every pair of aligned points in the data set.
 
-{% $$\text{distance} = a + b$$ %}
+$$\text{distance} = a + b$$
 
 
 $a+b=c$
