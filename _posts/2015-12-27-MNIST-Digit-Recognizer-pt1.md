@@ -59,7 +59,7 @@ We now know the purpose of the time warping and the requirements that the minimu
 {: .language-ruby}
 Here's some Python style pseudo-code for calculating the cost of the minimum cost path to (m-1, n-1):
 
-~~~~~~~
+~~~~~~~ python
 def distance(a, b):
 	return abs(a-b)
 
@@ -67,9 +67,9 @@ cost_matrix = np.zeros((m, n))
 cost_matrix[0, 0] = abs(y1[0] - y2[0])
 for i in range(m):
 	for j in range(n):
-		cost_matrix[i, j] = distance(y1[i], y2[j]) + minimum(cost_matrix[i-1, j], cost_matrix[i-1, j-1], cost_matrix[i, j-1])
+		cost_matrix[i, j] = distance(y1[i], y2[j]) +\
+		 minimum(cost_matrix[i-1, j], cost_matrix[i-1, j-1], cost_matrix[i, j-1])
 ~~~~~~~
-{: .language-python}
 
 The measure of how well the two signals match is then given by $cost_{m,n}$. 
 
