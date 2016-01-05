@@ -36,7 +36,7 @@ $a+b=c$
 
 LATEX:     distance = sum(all i) (ai-bi)
 
-update2
+update3
 
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
 
