@@ -2,6 +2,7 @@
 layout: post
 title: Data science monthly write-up--Kaggle digit recognition competition
 category: data science
+use_math: true
 ---
 
 #Introduction
