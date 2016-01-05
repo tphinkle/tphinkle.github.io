@@ -29,16 +29,15 @@ Remember, each character matrix is actually transformed into two time-series, on
 
 The simplest way to quantify the difference between two time-series is via a simple time-aligned Euclidean distance metric. Simply put, we take the two time-series, align them on the time-axis, and sum the distance between every pair of aligned points in the data set.
 
-$ a+b=c $
+$$ 
+\begin{align*}
+	& C = \sum_{i}\left(y_{1}\left(t_{i}\right)^{2}-y_{2}\left(t_{i}\right)^{2}\right) 
+\end{align*}
+$$
 
-But next comes a paragraph \$$ a+b = c$$
-
-\[2+2 = 4\]
-
-asdf
-asdf
-asdf
-
+$$
+C = \sum_{i}\left(y_{1}\left(t_{i}\right)^{2}-y_{2}\left(t_{i}\right)^{2}\right) 
+$$
 
 
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
