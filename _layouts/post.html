@@ -6,6 +6,9 @@ layout: default
 
 <article class="post">
   <h1>{{ page.title }}</h1>
+  <div class="date">
+    Written on {{ page.date | date: "%B %e, %Y" }}
+  </div>
 
   <div class="entry">
     {{ content }}
@@ -14,9 +17,7 @@ layout: default
 
  
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
+  
 
   
 </article>
