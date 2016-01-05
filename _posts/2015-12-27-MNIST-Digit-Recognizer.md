@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Data science monthly write-up--Kaggle digit recognition competition
+category: data science
 use_math: true
 ---
 
@@ -11,7 +12,7 @@ Here's a two from that data set:
 
 ![a two](https://tphinkle.github.io/images/2015-12-27/two_gs_0.png)
 
-To solve the challenge, I tried two different approaches. The first approach uses an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) and the second uses [soft-max regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/), a generalization of logistic regression to allow for more than two classifications. In this post, I'll do my best to explain how each method works and describe how successful my implementations of each were in recognizing digits.
+To solve the challenge, I tried two different approaches. The first approach uses an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) and the second uses [soft-max regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/), a generalization of logistic regression to allow for more than two classifications. In this post, I'll do my best to explain how each method works and describe how successful each of my implementations was in recognizing digits.
 
 [Part 1: Dynamic time warping](https://tphinkle.github.io/)
 
@@ -19,7 +20,7 @@ To solve the challenge, I tried two different approaches. The first approach use
 
 Dynamic time warping is an algorithm used to quantify how similar two signals are. The method is usually used to compare time-series data, and in fact, was developed in the 70's primarily for the purpose of speech recognition. The data doesn't have to be a time-series, though; actually, all that is required is that we are able to represent our data in some way as x-y data. For brevity and for historical reasons, I'll refer to the x-y representation of the data as a time series, even though it is not what we would traditionally view as a time-series.
 
-Right now you may be scratching your head--how do we get a time-series out of our data type, a grayscale image with pixel values? First, I converted the grayscale representation of each character to a black/white representation; the digit still retains its identity as a black and white image. To create a time-series of the image, I "walked" around the digit, following its perimeter. By recording the row and column of our position in the matrix at each step in the walk, we get two different time series.
+Right now you may be scratching your head--how do we get a time-series out of our data type, a grayscale image with pixel values? There are any number of ways one could think about transforming the data, but this is how I did it. First, I converted the grayscale representation of each character to a black/white representation; the digits are still identifiable as black and white images. To create a time-series of the image, I "walked" around the digit, following its perimeter. By recording the row and column of our position in the matrix at each step in the walk, we get two different time series.
 
 Here's what the representation change looks like:
 
