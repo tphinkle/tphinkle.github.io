@@ -2,6 +2,7 @@
 layout: post
 title: Data science monthly write-up--Kaggle digit recognition competition
 category: data science
+comments: True
 ---
 
 #Introduction
@@ -70,7 +71,7 @@ We now know the purpose of the time warping and the requirements that the minimu
 
 Here's the algorithm for calculating the cost of the minimum cost path to (i, j):
 
-```python
+```
 cost_{i,j} = distance(i, j) + minimum(cost_{i-1,j}, cost_{i-1, j-1}, cost_{i, j-1})
 ```
 

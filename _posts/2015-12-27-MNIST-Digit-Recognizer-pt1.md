@@ -2,6 +2,7 @@
 layout: post
 title: Data science monthly write-up--Kaggle digit recognition competition--Part 1
 category: data science
+comments: True
 ---
 
 ##Part 1: Dynamic time warping
