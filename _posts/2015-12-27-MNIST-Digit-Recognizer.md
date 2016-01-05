@@ -31,7 +31,6 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $$ a+b=c $$
 
-\[ 2+2 = 4 \]
 
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
 
