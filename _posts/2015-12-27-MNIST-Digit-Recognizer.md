@@ -12,7 +12,7 @@ Here's a two from that data set:
 
 To solve the challenge, I tried two different approaches. The first approach uses an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) and the second uses [soft-max regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/), a generalization of logistic regression to allow for more than two classifications. In this post, I'll do my best to explain how each method works and describe how successful my implementations of each were in recognizing digits.
 
-[Part 1](https://tphinkle.github.io/)
+[Part 1: Dynamic time warping](https://tphinkle.github.io/)
 
 ##Part 1: Dynamic time warping
 
