@@ -34,6 +34,7 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $a+b=c$
 
+
 LATEX:     distance = sum(all i) (ai-bi)
 
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
