@@ -31,7 +31,7 @@ The simplest way to quantify the difference between two time-series is via a sim
 
 $ a+b=c $
 
-$$ a+b = c$$
+But next comes a paragraph \$$ a+b = c$$
 
 \[2+2 = 4\]
 
