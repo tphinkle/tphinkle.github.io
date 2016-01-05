@@ -29,12 +29,7 @@ Remember, each character matrix is actually transformed into two time-series, on
 
 The simplest way to quantify the difference between two time-series is via a simple time-aligned Euclidean distance metric. Simply put, we take the two time-series, align them on the time-axis, and sum the distance between every pair of aligned points in the data set.
 
-$$a+b=c$$
-
-
-LATEX:     distance = sum(all i) (ai-bi)
-
-update3
+$$ a+b=c $$
 
  The more similar the two time series are, the lower their cumulative difference is. The following image shows a visualization of this difference. 
 
