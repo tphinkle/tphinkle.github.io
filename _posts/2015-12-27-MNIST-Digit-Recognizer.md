@@ -94,7 +94,7 @@ for i in range(m):
 	  minimum(cost_matrix[i-1, j], cost_matrix[i-1, j-1], cost_matrix[i, j-1])
 ~~~~~~~
 
-The measure of how well the two signals match is then given by $cost_{m,n}$. 
+The measure of how well the two signals match is then given by cost_matrix[m-1, n-1]. 
 
 Finally, it can be useful to visualize the warping by looking at what the path actually looks like. The optimal warping path itself is found by starting at the end point (m-1, n-1) and 'walking' to (0,0), at each step walking to the adjacent matrix element with the lowest minimum cost. Below we have the distance matrix, cost matrix, and plots of the two time-series showing the warping that the algorithm has provided. Note the difference between the non-warping (above) and warping plots.
 
