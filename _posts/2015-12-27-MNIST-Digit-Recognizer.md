@@ -106,9 +106,9 @@ The above algorithm described how to calculate the difference between two digits
 
 Here are the results of the algorithm:
 
-|      **Test**       |       **Correct         |        **Total**      |   **Ratio**  |
+|      **Test**       |       **Correct**       |        **Total**      |   **Ratio**  |
 |     **digit**       |    **predictions**      |     **predictions**   |              |
-| ------------------- |:-----------------------:|:---------------------:|-------------:|
+|:------------------- |:----------------------- |:--------------------- |:------------ |
 | 0                   |815                      |1090                   |0.75          |
 | 1                   |1151                     |1249                   |0.92          |
 | 2                   |702                      |1102                   |0.64          |
