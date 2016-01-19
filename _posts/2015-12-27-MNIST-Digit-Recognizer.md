@@ -5,7 +5,8 @@ category: data science
 comments: True
 ---
 
-#Introduction
+#Kaggle digit recognition competition
+
 In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com). The goal is to accurately recognize single hand-written digits, which are provided as two-dimensional grayscale images. Each pixel element is an integer value in the range [0, 255].
 
 Here's what a typical digit from the dataset looks like:
@@ -98,6 +99,8 @@ The measure of how well the two signals match is then given by $cost_{m,n}$.
 Finally, it can be useful to visualize the warping by looking at what the path actually looks like. The optimal warping path itself is found by starting at the end point (m-1, n-1) and 'walking' to (0,0), at each step walking to the adjacent matrix element with the lowest minimum cost. Below we have the distance matrix, cost matrix, and plots of the two time-series showing the warping that the algorithm has provided. Note the difference between the non-warping (above) and warping plots.
 
 ![Full DTW solution](https://tphinkle.github.io/images/2015-12-27/all_plots.png)
+
+##Results
 
 The above algorithm described how to calculate the difference between two digits. The kaggle competition asked for us to classify unknown digits from a test set. To do this, I calculated the cost value between a given test digit and a set of k training samples for each digit. The test digit is then classified by the k training samples with the lowest total cost (the best overall fit between all training examples).
 
