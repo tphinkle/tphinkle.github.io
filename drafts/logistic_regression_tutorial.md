@@ -5,9 +5,9 @@ category: data science
 comments: True
 ---
 
-##Part 2: Soft-max regression
+#Logistic regression
 
-As the introduction to this blog post stated, soft-max regression is a generalization of logistic regression, which begs the question of what logistic regression is. A quick explanation of logistic regression seems like a good starting point for this post, so here goes. I'll try to explain things in a general way and using the digit recognizer as a concrete example in parallel.
+This post originally started out as a write-up of my attempt at solving the Kaggle MNIST digit recognizer challenge using soft-max regression (you can find my other attempt in a blog post [here](https://tphinkle.github.io/MNIST-Digit-Recognizer/)). While writing it up, I wasn't sure about how much detail I wanted to go into. It sort of started turning into a full-blown logistic regression tutorial, so I decided to split it up and give it its own blog post.
 
 ###Logistic regression
 Suppose we're given the digit data, but with only 0's and 1's. How do we teach the computer to classify one of the digits? I can think of an easy way: count the number of loops in the character! Here's the solution in pseudo-code:
