@@ -106,20 +106,20 @@ The above algorithm described how to calculate the difference between two digits
 
 Here are the results of the algorithm:
 
-|      **Test**       |       **Correct**       |        **Total**      |   **Ratio**  |
-|     **digit**       |    **predictions**      |     **predictions**   |              |
-|:------------------- |:----------------------- |:--------------------- |:------------ |
-| 0                   |815                      |1090                   |0.75          |
-| 1                   |1151                     |1249                   |0.92          |
-| 2                   |702                      |1102                   |0.64          |
-| 3                   |1018                     |1106                   |0.92          |
-| 4                   |958                      |1093                   |0.88          |
-| 5                   |740                      |971                    |0.76          |
-| 6                   |891                      |1058                   |0.84          |
-| 7                   |1083                     |1177                   |0.92          |
-| 8                   |716                      |1054                   |0.68          |
-| 9                   |784                      |1100                   |0.71          |
-| **Total**           |**8858**                 |**11000**              |**0.81**      |
+|      **Test**       |   |       **Correct**       |   |        **Total**      |   |   **Ratio**  |
+|     **digit**       |   |    **predictions**      |   |     **predictions**   |   |              |
+|:------------------- |---|:----------------------- |---|:--------------------- |---|:------------ |
+| 0                   |   |815                      |   |1090                   |   |0.75          |
+| 1                   |   |1151                     |   |1249                   |   |0.92          |
+| 2                   |   |702                      |   |1102                   |   |0.64          |
+| 3                   |   |1018                     |   |1106                   |   |0.92          |
+| 4                   |   |958                      |   |1093                   |   |0.88          |
+| 5                   |   |740                      |   |971                    |   |0.76          |
+| 6                   |   |891                      |   |1058                   |   |0.84          |
+| 7                   |   |1083                     |   |1177                   |   |0.92          |
+| 8                   |   |716                      |   |1054                   |   |0.68          |
+| 9                   |   |784                      |   |1100                   |   |0.71          |
+| **Total**           |   |**8858**                 |   |**11000**              |   |**0.81**      |
 
 
 The data shows that the method is *just ok* getting roughly four of every five classifications correct. All in all I think this is ok for a method that was not developed to handle this type of problem at all. Another point to make is that there are a number of different varieties of DTW that exist that potentially could be used to improve the digit recognition record. Two flavors of DTW I'll point out are derivative dynamic time warping (DDTW) and weighted dynamic time warping (WDTW). As the name implies, in DDTW the distance between two points is given by the difference in their local *derivatives*, not their amplitudes. This method is especially useful if we have features that differ in amplitude but have similar shapes. For example, the method would more properly match two peaks that differ in amplitude. WDTW works by adding a factor to the distance between two points based on their time separation. Points that are closer together in time between the two signals are given greater weights than points further apart; the effect of the weight addition is to add a sort of stiffness to the warping procedure.
