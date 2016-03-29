@@ -15,11 +15,11 @@ Here's what a typical digit from the dataset looks like:
 
 To solve the challenge, I used an algorithm called [dynamic time warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW). It's a nifty little method that provides an intuitive way of comparing different signals (in this case, the digits). In this post, I'll do my best to explain how the method works and how successful my implementation of it was in recognizing digits.
 
-#Dynamic time warping
+# Dynamic time warping
 
 Dynamic time warping is an algorithm used to quantify how similar two signals are. The method is usually used to compare time-series data, and in fact, was developed in the 70's primarily for the purpose of speech recognition. The data doesn't have to be a time-series, though; actually, all that is required is that we are able to represent our data in some way as x-y data. For brevity and for historical reasons, I'll refer to the x-y representation of the data as a time series, even though it is not what we would traditionally view as a time-series.
 
-##Representing the digits as time-series data
+## Representing the digits as time-series data
 
 Right now you may be scratching your head--how do we get a time-series out of our data type, a grayscale image with pixel values? There are any number of ways one could think about transforming the data, but this is how I did it. First, I converted the grayscale representation of each character to a black/white representation; the digits are still identifiable as black and white images and it drastically simplifies the identification task. To create a time-series of the black and white image, I "walked" around the digit's perimeter, recording at each step in the walk the row and column designating our position. This process actually produces two time-series. The time-axis corresponds to the step number in the walk, and the y-axis corresponds to either the row or column position at that step.
 
@@ -31,7 +31,7 @@ Here's what the representation change looks like:
 
 Now that we have the representation transformation down, we need to quantitatively calculate the 'difference' between different characters' time series.
 
-##Comparing the digits
+## Comparing the digits
 
 The simplest way to quantify the difference between two time-series is via a simple time-aligned Euclidean distance metric. Simply put, we take the two time-series, align them on the time-axis, and sum the distance between every pair of aligned points in the data set.
 
@@ -100,7 +100,7 @@ Finally, it can be useful to visualize the warping by looking at what the path a
 
 ![Full DTW solution](https://tphinkle.github.io/images/2015-12-27/all_plots.png)
 
-##Results
+## Results
 
 The above algorithm described how to calculate the difference between two digits. The kaggle competition asked for us to classify unknown digits from a test set. To do this, I calculated the cost value between a given test digit and a set of k training samples for each digit. The test digit is then classified by the k training samples with the lowest total cost (the best overall fit between all training examples).
 
