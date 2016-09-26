@@ -1,0 +1,25 @@
+I recently started working on a project where the goal is to find periodicity within a time series. The naive solution is pretty straight forward: calculate the power spectral density (technically, the periodogram) of the signal, and look for peaks in the spectrum. However this method doesn't work for my data set, and I suspect it won't work for many other applications as well. Two reasons why:
+
+1. The data is not regularly sampled.
+
+The data set I'm working with is gamma ray counts from the Fermi space telescope. Because Fermi is in orbit, it can't stay pointed at the same object continuously. Instead, it takes a rapid series of measurements while it is on the same side of the Earth as the star until the star again goes out of view. The resulting distribution of exposures that Fermi takes looks like this:
+
+What does this have to do with our power spectrum? Remember that the power spectrum is the squared modulus of the (discrete) Fourier transform of the time-series. Calculation of the dFT requires that the data be evenly sampled, which just isn't so for Fermi. We could down sample the data, taking one data point every orbital period and calculate the PSD of the downsampled time-series, but that would be discarding a serious amount of data which is often not practical.
+
+2. The periodic part of the signal is **faint**.
+
+I won't go into the astrophysics here of where the periodicity in our Fermi data comes from, but the effect is subtle. A straight-forward calculation of the power spectral density probably wouldn't yield enough accuracy for us to find a peak.
+
+Fortunately, problems 1 and 2 already have solutions. Whenever data is irregularly sampled as our Fermi data is, we can calculate something similar to the PSD called the Lomb-Scargle periodogram. The L-S periodogram has the same interpretation as the PSD, but uses a different formula. To deal with the matter of our faint signal, there's something called Welch's method that can be used to smooth noisy PSDs. The objective of this blog post is to demonstrate the Welch's method with Lomb-Scargle periodograms. Along the way, I'll talk about the general idea of the PSD and Welch's method, applied to an artificial time-series consisting of a periodic signal over a noisy background. All of the analysis will be performed in Jupyter notebooks running Python 2.7 code.
+
+# Welch's method for an evenly sampled data set
+### Generating the signal
+
+Consider a measured time-series that is the superposition of the signal-of-interest and noise. To make things interesting, let's say that the underlying physical process we're interested in has two fundamental frequencies, and that our noise consists of white noise and pink noise.
+
+Here's the code to generate the signal:
+
+
+
+
+
