@@ -4,9 +4,11 @@ I recently started working on a project where the goal is to find periodicity wi
 
 The data set I'm working with is gamma ray counts from the Fermi space telescope. Because Fermi is in orbit, it can't stay pointed at the same object continuously. Instead, it takes a rapid series of measurements while it is on the same side of the Earth as the star until the star again goes out of view. The resulting distribution of exposures that Fermi takes looks like this:
 
+![Fermi exposures][link]
+
 What does this have to do with our power spectrum? Remember that the power spectrum is the squared modulus of the (discrete) Fourier transform of the time-series. Calculation of the dFT requires that the data be evenly sampled, which just isn't so for Fermi. We could down sample the data, taking one data point every orbital period and calculate the PSD of the downsampled time-series, but that would be discarding a serious amount of data which is often not practical.
 
-2. The periodic part of the signal is **faint**.
+2. The periodic part of the signal is *faint*.
 
 I won't go into the astrophysics here of where the periodicity in our Fermi data comes from, but the effect is subtle. A straight-forward calculation of the power spectral density probably wouldn't yield enough accuracy for us to find a peak.
 
@@ -15,9 +17,20 @@ Fortunately, problems 1 and 2 already have solutions. Whenever data is irregular
 # Welch's method for an evenly sampled data set
 ### Generating the signal
 
-Consider a measured time-series that is the superposition of the signal-of-interest and noise. To make things interesting, let's say that the underlying physical process we're interested in has two fundamental frequencies, and that our noise consists of white noise and pink noise.
+Consider a measured time-series that is the superposition of the signal-of-interest and noise. To make things interesting, let's say that the underlying physical process we're interested in has two fundamental frequencies, and the noise consists of white noise and pink $\left(1/f\right)$ noise.
 
-Here's the code to generate the signal:
+Here's the Python code to generate the signal and noise:
+
+
+And here are plots of the signal, both noise terms, and the total measured time-series:
+
+![Time-series][link]
+
+### Calculating the PSD
+
+Now we'll calculate the PSD of the signal. As stated earlier, the PSD is just the dFT of the signal, squared. We could calculate this ourselves using the formula for the dFT, but I'll just go ahead and directly calculate it using the periodogram function from the scipy.signal package.
+
+As you can see in the PSD, there are two distinct peaks at the two frequencies from our signal. Cool, huh? It's pretty remarkable that the method can be used to find periodicity when it's completely unrecognizable in the observed signal.
 
 
 
