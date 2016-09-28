@@ -11,7 +11,7 @@ I recently started working on a project where the goal is to find periodicity wi
 
 The data set I'm working with is gamma ray counts from the Fermi space telescope. Because Fermi is in orbit around the Earth, it can't stay pointed at the same object continuously. Instead, it takes a rapid series of measurements while it is on the same side of the Earth as the star until the star again goes out of view. The resulting distribution of exposures that Fermi takes looks like this:
 
-![Fermi exposures][https://github.com/tphinkle/tphinkle.github.io/blob/master/images/2016-9-25/fermi_exposures.png]
+![Fermi exposures](https://github.com/tphinkle/tphinkle.github.io/blob/master/images/2016-9-25/fermi_exposures.png)
 
 It's clear that the exposures and hence the resulting time-series is definitely not evenly sampled.
 
