@@ -39,8 +39,10 @@ And here are plots of the signal, both noise terms, and the total measured time-
 Now we'll calculate the PSD of the signal. As stated earlier, the PSD is just the dFT of the signal, squared.
 
 $$
-S_{xx}\left(\omega\right) = \| \hat{x}\left(\omega\right) \|^{2} = \| \sum_{i=0}^{N}x_{i}e^{2\pi\i t}
+S\left(f\right)=\left\lvert \hat{x}\left(f\right)\right\rvert^{2}=\frac{\Delta t}{N}\left\lvert\sum_{n=0}^{N-1}x_{n}e^{-i2\pi n\Delta tf}\right\rvert^{2}
 $$
+
+Where $N$ is the number of samples, .
 
  We could calculate this ourselves using the formula for the dFT, but I'll just go ahead and directly calculate it using the periodogram function from the scipy.signal package.
 

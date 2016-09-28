@@ -38,6 +38,11 @@ And here are plots of the signal, both noise terms, and the total measured time-
 
 Now we'll calculate the PSD of the signal. As stated earlier, the PSD is just the dFT of the signal, squared.
 
+\(paran\)
+\[square brackets\]
+\\(double paran\\)
+\\[double square\\]
+
 $$
 S\left(f\right)=\left\lvert \hat{x}\left(f\right)\right\rvert^{2}=\frac{\Delta t}{N}\left\lvert\sum_{n=0}^{N-1}x_{n}e^{-i2\pi n\Delta tf}\right\rvert^{2}
 $$
