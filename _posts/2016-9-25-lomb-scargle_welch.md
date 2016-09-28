@@ -71,6 +71,8 @@ For the following analysis, I used a Hanning window defined by the function \\(w
 
 ![Hanning window applied to data](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2016-9-25/window_function.png)
 
+<img src="drawing.jpg" alt="Hanning window applied to data" style="width: 200px;"/>
+
 After windowing the data, calculating and averaging all of the periodograms, the spectrum looks like this:
 
 ![Welch-psd](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2016-9-25/welch_periodogram.png)
