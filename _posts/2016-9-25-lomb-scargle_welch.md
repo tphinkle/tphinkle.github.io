@@ -11,28 +11,26 @@ I recently started working on a project where the goal is to find periodicity wi
 
 The data set I'm working with is gamma ray counts from the Fermi space telescope. Because Fermi is in orbit around the Earth, it can't stay pointed at the same object continuously. Instead, it takes a rapid series of measurements while it is on the same side of the Earth as the star until the star again goes out of view. The resulting distribution of exposures that Fermi takes looks like this:
 
-![Fermi exposures](https://github.com/tphinkle/tphinkle.github.io/blob/master/images/2016-9-25/fermi_exposures.png)
+![Fermi exposures](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2016-9-25/fermi_exposures.png)
 
-It's clear that the exposures and hence the resulting time-series is definitely not evenly sampled.
-
-What does this have to do with our power spectrum? Remember that the power spectrum is the squared modulus of the (discrete) Fourier transform of the time-series. Calculation of the dFT requires that the data be evenly sampled, which isn't the case for Fermi data. We could down sample the data, taking one data point every orbital period and calculating the PSD of the downsampled time-series, but that would be discarding a serious amount of data which is often not practical.
+It's clear that the exposures and hence the resulting time-series are not evenly sampled, but how does that effect the power spectrum? Remember that the power spectrum is the squared modulus of the (discrete) Fourier transform of the time-series. Calculation of the dFT requires that the data be evenly sampled, which isn't the case for the Fermi data. We could down sample the data, taking one data point every orbital period and calculating the PSD of the downsampled time-series, but that would be discarding a serious amount of data which is seldom practical.
 
 2. The periodic part of the signal is *faint*.
 
-I won't go into the astrophysics here of where the periodicity in our Fermi data comes from, but the effect is subtle. A straight-forward calculation of the power spectral density probably wouldn't yield enough accuracy for us to find a peak.
+I won't go into the astrophysics here of where the periodicity in our Fermi data comes from, but the effect is subtle. A straight-forward calculation of the power spectral density doesn't yield enough accuracy for us to find a peak.
 
-Fortunately, problems 1 and 2 already have solutions. Whenever data is irregularly sampled as our Fermi data is, we can calculate something similar to the PSD called the Lomb-Scargle periodogram. The L-S periodogram has the same interpretation as the PSD, but uses a different formula. To deal with the matter of our faint signal, there's something called Welch's method that can be used to smooth noisy PSDs. The objective of this blog post is to apply Welch's method to calculate Lomb-Scargle periodograms. Along the way, I'll talk about the general idea of the PSD and Welch's method, applied to an artificial time-series consisting of a periodic signal over a noisy background. All of the analysis will be performed in Jupyter notebooks running Python 2.7 code. 
+Fortunately, problems 1 and 2 already have solutions. Whenever data is irregularly sampled as our Fermi data is, we can calculate something similar to the PSD called the Lomb-Scargle periodogram. The L-S periodogram has the same interpretation as the PSD, but uses a different formula. To tackle the issue of faint signals, there's something called Welch's method that can be used to smooth noisy PSDs. The objective of this blog post is to apply Welch's method to calculate Lomb-Scargle periodograms. Along the way, I'll talk about the general idea of the PSD and Welch's method, applied to an artificial time-series consisting of a periodic signal over a noisy background. All of the analysis will be performed in Jupyter notebooks running Python 2.7 code. 
 
-Quick aside before jumping in: what we're actually calculating here is the *periodogram* of the signal--not the power spectrum. IMO this is a technical distinction; the power spectrum and periodogram differ only in that one is calculated via the Fourier transform of an infinite, continuous signal and the other via the discrete Fourier transform of a finite, discrete signal. In spirit the two calculate the same thing, namely the frequency dependence of the total energy in the signal, and you'll more often than not hear people refer to the periodogram as the 'spectrum', 'power spectrum', or 'power spectral density' (these terms are often used interchangably).
+Quick aside before jumping in: what we're actually calculating here is the *periodogram* of the signal--not the power spectrum. IMO this is a technical distinction; the power spectrum and periodogram differ only in that one is calculated via the Fourier transform of an infinite, continuous signal and the other via the discrete Fourier transform of a finite, discrete signal. In spirit the two calculate the same thing, namely the frequency dependence of the signal intensity, and you'll more often than not hear people refer to the periodogram as the 'spectrum', 'power spectrum', or 'power spectral density' (these terms are often used interchangably).
 
 # Welch's method for an evenly sampled data set
 ### Generating the signal
 
-Consider a measured time-series that is the superposition of the signal-of-interest and noise. To make things interesting, let's say that the underlying physical process we're interested in has two fundamental frequencies, and the noise consists of white noise and pink, or $\left(1/f\right)$, noise.
+Consider a time-series of measured data that is the superposition of the signal-of-interest and noise. To make things interesting, let's say that the underlying physical process that generates the signal has two fundamental frequencies and that the noise is a superposition of white noise and pink, or $\left(1/f\right)$, noise.
 
 Here's the Python code to generate the signal and noise:
 
-The signal is generated by adding two sin functions of different frequencies. White-noise, which is a random signal with no correlaion between measurements in time, was sampled from a normal distribution. Generating the pink-noise is a little bit more complicated. Pink-noise is a noise source which has power spectrum \\(S\propto 1/f\\). To generate the pink noise, I took the inverse Fourier transform of the square root of the \\(1/f\\) power spectrum, giving each frequency component a uniformly distributed random phase.
+The signal is generated by adding two sin functions of different frequencies. White-noise, which is a random signal with no time-correlation, was sampled from a normal distribution. Generating the pink-noise is a little bit more complicated. Pink-noise is a noise source which has power spectrum \\(S\propto 1/f\\). To generate the pink noise, I took the inverse Fourier transform of the square root of the \\(1/f\\) power spectrum, giving each frequency component a uniformly distributed random phase.
 
 And here are plots of the signal, both noise terms, and the total measured time-series:
 
