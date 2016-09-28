@@ -1,3 +1,11 @@
+---
+layout: post
+title: Welch's method for Lomb-Scargle periodograms
+category: data science
+comments: True
+---
+
+
 I recently started working on a project where the goal is to find periodicity within a time series. The naive solution is pretty straight forward: calculate the power spectral density (technically, the periodogram) of the signal, and look for peaks in the spectrum. However this method doesn't work for my data set, and I suspect it won't work for many other applications as well. Two reasons why:
 
 1. The data is not regularly sampled.
@@ -28,7 +36,13 @@ And here are plots of the signal, both noise terms, and the total measured time-
 
 ### Calculating the PSD
 
-Now we'll calculate the PSD of the signal. As stated earlier, the PSD is just the dFT of the signal, squared. We could calculate this ourselves using the formula for the dFT, but I'll just go ahead and directly calculate it using the periodogram function from the scipy.signal package.
+Now we'll calculate the PSD of the signal. As stated earlier, the PSD is just the dFT of the signal, squared.
+
+$$
+S_{xx}\left(\omega\right) = \| \hat{x}\left(\omega\right) \|^{2} =
+$$
+
+ We could calculate this ourselves using the formula for the dFT, but I'll just go ahead and directly calculate it using the periodogram function from the scipy.signal package.
 
 As you can see in the PSD, there are two distinct peaks at the two frequencies from our signal. Cool, huh? It's pretty remarkable that the method can be used to find periodicity when it's completely unrecognizable in the observed signal.
 

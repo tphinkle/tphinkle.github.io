@@ -1,3 +1,11 @@
+---
+layout: post
+title: Welch's method for Lomb-Scargle periodograms
+category: data science
+comments: True
+---
+
+
 I recently started working on a project where the goal is to find periodicity within a time series. The naive solution is pretty straight forward: calculate the power spectral density (technically, the periodogram) of the signal, and look for peaks in the spectrum. However this method doesn't work for my data set, and I suspect it won't work for many other applications as well. Two reasons why:
 
 1. The data is not regularly sampled.
