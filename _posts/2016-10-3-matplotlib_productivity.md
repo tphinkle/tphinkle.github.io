@@ -102,11 +102,6 @@ for i, mu_poisson in enumerate([.3, 2, 6, 10]):
     y_poisson.append(poisson.pmf(x, mu_poisson))
 ```
 
-
-![png](2016-10-3-matplotlib_productivity_final_files/2016-10-3-matplotlib_productivity_final_10_0.png)
-
-
-
 ```python
 x_2 = x
 y_2_0 = y_poisson[0]
@@ -299,4 +294,4 @@ plt.show()
 ```
 
 
-![png](2016-10-3-matplotlib_productivity_final_files/2016-10-3-matplotlib_productivity_final_21_0.png)
+![png](files/jupyter_notebooks//2016-10-3-matplotlib_productivity_final_files/2016-10-3-matplotlib_productivity/2016-10-3-matplotlib_productivity_final_21_0.png)
