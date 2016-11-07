@@ -5,7 +5,7 @@ category: Science
 comments: True
 ---
 
-In one of my research projects we pass particles through small microfluidic channels, and on occasion after an experiment I don't clean up as well as I should. Here are some chips I found lying around that I thought would be cool to image. The small spheres are polystyrene beads, and the solution/precipitate is KCl.
+In one of my research projects we pass particles through small microfluidic channels, and on occasion after an experiment I don't clean up as well as I should. Here are some chips I found lying around that I thought would be cool to image. The small spheres are polystyrene beads, and the solution/precipitate is KCl. For reference, the beads are 10 microns in diameter, or around a tenth of the thickness of a strand of human hair.
 
 Pictures:
 

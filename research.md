@@ -8,9 +8,9 @@ Research
 
 ### Introduction
 
-I currently work with [Professor Zuzanna Siwy](http://www.physics.uci.edu/~zsiwy/) studying [nanopores](https://en.wikipedia.org/wiki/Nanopore) at the University of California Irvine.
+I currently work with [Professor Zuzanna Siwy](http://www.physics.uci.edu/~zsiwy/) doing experiments on [nanopores](https://en.wikipedia.org/wiki/Nanopore) and microfluidics at the University of California Irvine.
 
-As the name suggests, nanopores are small holes around one billionth of a diameter in size. Nanopores exist naturally in biology, where they can be found in cell and nuclear membranes.
+As the name suggests, nanopores are small holes around one billionth of a meter in diameter. Nanopores exist naturally in biology, where they can be found in cell and nuclear membranes.
 
 In the Siwy lab we work primarily with synthetic nano- and micropores. Nanopores are used in a surprisingly large variety of applications, including water desalination, biomolecule sensing, enhanced drug delivery, and ionic circuitry. 
 
