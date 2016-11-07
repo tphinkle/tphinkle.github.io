@@ -1,3 +1,10 @@
+---
+layout: post
+title: Matplotlib template
+category: data science, programming
+comments: True
+---
+
 # Quick matplotlib reference
 
 This is a quick post meant (mostly for me) as a reference for the various matplotlib functions that I use regularly, but inevitably forget the exact details for (function arguments, etc.). I'll explain my practices for creating a matplotlib figure, specifically in the Jupyter environment, and create a multiplot in the process.
