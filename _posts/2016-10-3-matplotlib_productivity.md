@@ -9,15 +9,11 @@ This is a quick post meant to serve as a reference for the various matplotlib fu
 
 Before getting in to it, I'll explain my philosophy behind writing the code used to generate figures. Some of this is sound coding advice anyways.
 
-/begin preaching
-
 1. The code used to generate the data and the code used to generate the representation of the data (i.e. the plot) should always be kept separate! This makes the code easier to read because you have a nice separation of the two orthogonal processes. The other, more concrete benefit is that if your data is computationally expensive to generate, you don't have to do calculate it all again anytime you want to make a minor cosmetic change to the figure.
 
 2. Your figures should be standardized. Whether you're creating figures for a blog post or a paper, it's aesthetically pleasing to have consistency between reocurring figure elements, e.g. colors, axis text size, etc. Create variables for cosmetic parameters you use so that you can easily keep them the same across different figures.
 
 3. The code to generate your plot should also be standardized so that every action to modify the plot is called in the same relative order, every time. This makes it easier to find the exact line to modify if there is something you want to change, and also it allows you to have a nice template so that you can copy and paste all the code used to generate a figure and only have to modify it slightly.
-
-/end preaching
 
 Anyways, here are the Jupyter notebooks. At the very end you can find a heavily-annotated version in case you're curious about what each line of code is for.
 

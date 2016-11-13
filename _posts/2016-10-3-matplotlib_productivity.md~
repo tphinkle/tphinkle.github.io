@@ -155,7 +155,7 @@ x_3_1 = x
 y_3_1 = y_pred_reg
 ```
 
-# Generate figure
+# Create figure
 
 ##### Imports
 
@@ -296,4 +296,4 @@ plt.show()
 ```
 
 
-![png](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/files/jupyter_notebooks/2016-10-3-matplotlib_productivity_final_files/2016-10-3-matplotlib_productivity_final_21_0.png/)
+![png](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2016-10-3/2016-10-3-matplotlib_productivity_final_21_0.png)
