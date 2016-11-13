@@ -294,4 +294,4 @@ plt.show()
 ```
 
 
-![png](https://github.com/tphinkle/tphinkle.github.io/blob/master/files/jupyter_notebooks/2016-10-3-matplotlib_productivity/2016-10-3-matplotlib_productivity_final_files/2016-10-3-matplotlib_productivity_final_21_0.png?raw=true)
+![png](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/files/jupyter_notebooks/2016-10-3-matplotlib_productivity_final_files/2016-10-3-matplotlib_productivity_final_21_0.png/)
