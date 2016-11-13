@@ -291,4 +291,4 @@ plt.savefig('./file_name.png', dpi = 300)
 plt.show()
 ```
 
-<p style="text-align:center;"><img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2016-10-3/2016-10-3-matplotlib_productivity_final_21_0.png" alt="png" style="width: 800px;"></p>
+<p style="text-align:center;"><img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2016-10-3/matplotlib_productivity_final.png" alt="png" style="width: 800px;"></p>
