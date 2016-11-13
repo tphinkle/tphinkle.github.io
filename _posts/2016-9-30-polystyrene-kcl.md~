@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Polystyrene beads suspended in KCl
+title: Gallery: Polystyrene beads suspended in KCl
 category: Science
 comments: True
 ---
