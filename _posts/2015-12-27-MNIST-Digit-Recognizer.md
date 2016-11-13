@@ -5,8 +5,6 @@ category: data science
 comments: True
 ---
 
-# Introduction
-
 In this post I'll write about my attempt at the [digit recognition Kaggle competition](https://www.kaggle.com). The goal is to accurately recognize single hand-written digits, which are provided as two-dimensional grayscale images. Each pixel element is an integer value in the range [0, 255].
 
 Here's what a typical digit from the dataset looks like:
