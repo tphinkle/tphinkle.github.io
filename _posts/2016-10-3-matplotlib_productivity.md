@@ -15,7 +15,7 @@ Before getting in to it, I'll explain my philosophy behind writing the code used
 
 3. The code to generate your plot should also be standardized so that every action to modify the plot is called in the same relative order, every time. This makes it easier to find the exact line to modify if there is something you want to change, and also it allows you to have a nice template so that you can copy and paste all the code used to generate a figure and only have to modify it slightly.
 
-Anyways, here are the Jupyter notebooks. At the very end you can find a heavily-annotated version in case you're curious about what each line of code is for.
+Anyways, here it is!
 
 # Generating the data
 
