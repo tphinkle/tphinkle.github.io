@@ -4,8 +4,6 @@ title: Research
 permalink: /research/
 ---
 
-Research
-
 ### Introduction
 
 I currently work with [Professor Zuzanna Siwy](http://www.physics.uci.edu/~zsiwy/) doing experiments on [nanopores](https://en.wikipedia.org/wiki/Nanopore) and microfluidics at the University of California Irvine.
