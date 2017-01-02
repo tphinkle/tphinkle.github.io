@@ -26,7 +26,9 @@ Along with collaborators, I showed that it is possible to create an ionic diode 
 
 Resistive pulse sensing is a means of measuring the properties of small particles by the conductance changes they induce when they pass through a small nano or microchannel. This technique gives insight into the properties of particles at the nanoscale, where they are invisible to optical detection and are otherwise difficult to study. This technique was originally introduced in the Coulter counter, where it is used to perform red blood cell counts in hospitals. The same technique is also currently being used for nanopore-based DNA sequencing.
 
-![rp pic](http://tphinkle.github.io/images/research/rp_picture.png)
+![rp pic]()
+<img src="http://tphinkle.github.io/images/research/rp_picture.png" alt="rp-pic" style="width: 320px;"/>
+
 
 I've worked towards creating a better understanding of how the electrical signals measured in a resistive pulse experiment correspond to the properties of the particle being studied. For example, I helped show that aspherical objects create much larger resistive pulse signals than their size suggests they should.
 
