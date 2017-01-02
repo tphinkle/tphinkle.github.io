@@ -14,7 +14,7 @@ Here are a couple simple examples, which you can find [the code](#code) for at t
 # Simple linked plots
 
 
-<!DOCTYPE html>
+* <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -64,7 +64,7 @@ _Sources:_
 # Histogram plot with brushing
 
 
-<!DOCTYPE html>
+* <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -111,7 +111,7 @@ _Sources:_
 
 # Code <a name="code"></a>
 
-<!DOCTYPE html>
+* <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 <title>plots</title>
@@ -497,7 +497,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">output_file</span><span class="p">(</span><span class="s1">&#39;scatter_plot.html&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Bivariate gaussians&#39;</span><span class="p">)</span>
@@ -548,39 +548,8 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&apos;/home/preston/Desktop/Programming/website/github_site/tphinkle.github.io/files/jupyter_notebooks/2017-1-1-bokeh_intro/scatterplot.html&apos;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
 </body>
 </html>
-
-
