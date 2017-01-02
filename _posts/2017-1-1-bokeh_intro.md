@@ -58,13 +58,12 @@ Here are a couple simple examples, which you can find [the code](#code) for at t
 </html>
 
 _Sources:_
-[NASA CO2 data](http://climate.nasa.gov/vital-signs/carbon-dioxide/)
-[NASA temperature data](http://climate.nasa.gov/vital-signs/global-temperature/)
+1. [NASA CO2 data](http://climate.nasa.gov/vital-signs/carbon-dioxide/)
+2. [NASA temperature data](http://climate.nasa.gov/vital-signs/global-temperature/)
 
 # Histogram plot with brushing
 
 
-* <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
