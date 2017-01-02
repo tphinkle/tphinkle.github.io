@@ -5,16 +5,22 @@ category: data science, programming, Python
 comments: True
 ---
 
-[Matplotlib](http://matplotlib.org/) is my go-to tool for plotting in Python; I like that it is essentially infinitely customizable, allowing you to create polished looking plots. But, if your goal is to create a dynamic, interactable visualization, matplotlib isn't the best, which is where [bokeh](http://bokeh.pydata.org/en/latest/) comes in. Bokeh allows you to create either static or dynamic interactive plots.
+[Matplotlib](http://matplotlib.org/) is my go-to tool for plotting in Python; I like that it is essentially infinitely customizable, allowing you to create polished looking plots. But, it suffers at least a few drawbacks that may make it undesirable for some applications:
 
-I fooled around in Bokeh a bit and created a couple visualizations to show off how easy it is to get up and running. Since I don't host my own website, I don't have a way of creating dynamic plots with server-end processing. Keep in mind that i fyou're using hte full Bokeh-JS server you can add much more interactivity to your plots.
+1. Its interface is unintuitive
+2. It doesn't generalize well to large data sets
+3. It is non-interactive out of the box
 
-Here are a couple simple examples, which you can find [the code](#code) for at the end of the post:
+Although the three deficiencies listed above are unrelated, a single plotting tool [Bokeh](http://bokeh.pydata.org/en/latest/) seems to fill the gaps left by matplotlib. Bokeh is a Python library that uses Python code to generate pure json data, which in turn is used as instructions for rendering a plot client-side via the BokehJS library.
+
+I fooled around in Bokeh a bit and created a couple visualizations to show off how easy it is to get up and running. Since I don't host my own website, I don't have a way of creating dynamic plots with server-end processing. Keep in mind that if you're using the full Bokeh server you can add much more interactivity to your plots.
+
+Here are a couple simple examples, which you can find [the code](#code) for at the end of the post. I'm really impressed at how fast it was in going from installation to putting this blog post together.
 
 # Simple linked plots
 
+This is a simple figure that shows how you can link the x-axes of two separate Bokeh plots. This is immensely helpful for looking for correlations between two different data sets, as in the following figure that shows historical CO2 and temperature measurements.
 
-* <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -63,6 +69,8 @@ _Sources:_
 
 # Histogram plot with brushing
 
+This plot demonstrates Bokeh's 'brushing' feature, which allows you to highlight data points within a region of the plot made using the lasso tool. I think this would be much more useful if coupled with additional processing in Python on the server-end. For example, in the below plot we could generate histograms over only the selected points, which might be a useful visualization. Not possible in the static case, unfortunately. Still pretty cool, though!
+
 
 <html lang="en">
     <head>
@@ -109,8 +117,6 @@ _Sources:_
 
 
 # Code <a name="code"></a>
-
-* <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 <title>plots</title>
