@@ -41,7 +41,7 @@ Not all cells are alike, and as it turns out, one key feature that can be used t
 
 <img src="http://tphinkle.github.io/images/research/cell_trajectories.png" alt="cell trajectories" style="width: 480px;" align="middle"/>
 
-In my research, I build custom microfluidic channels and push cells through them at blazingly fast speeds. The shape of these microchannels induces pressure differences that cause the cells to deform, which I then image with a [high-speed camera](http://www.phantomhighspeed.com/) at speeds up to 100,000 fps! The end-game of this research is to develop a high-throughput sensing platform that can measure a cell's diameter and stiffness in real-time, and filter the cells based on the results.
+In my research, I build custom microfluidic channels and push cells through them at blazingly fast speeds. The shape of these microchannels induces pressure differences that cause the cells to deform, which I then image with a [high-speed camera](http://www.phantomhighspeed.com/) at speeds up to 100,000 fps! The end game of this research is to develop a high-throughput sensing platform that can measure a cell's diameter and stiffness in real time, and filter the cells based on the results.
 
 
 
