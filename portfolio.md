@@ -12,7 +12,7 @@ This is a GUI program written in C++ and Qt that enables remote control of a Kei
 
 # pore stats
 
-This was a program I wrote as part of a fellowship for creating an open-source data analysis package for [resistive pulse experiments](tphinkle.github.io/research/#resistive_pulse_sensing). 
+This was a program I wrote as part of a fellowship for creating an open-source data analysis package for [resistive pulse experiments](https://tphinkle.github.io/research/#resistive_pulse_sensing). 
 
 # cell controller
 
