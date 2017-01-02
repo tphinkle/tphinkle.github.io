@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Quick matplotlib reference post
-category: data science, programming
+title: Interactive static plots in Bokeh
+category: data science, programming, Python
 comments: True
 ---
+
+
 
 
 
