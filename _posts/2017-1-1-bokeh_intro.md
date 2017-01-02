@@ -16,6 +16,5 @@ Here are a couple simple examples, which you can find [the code](#code) for at t
 
 
 # Code <a name="code"></a>
-
-<iframe src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/files/2017-1-1-bokeh_intro/notebook.html"></iframe>
+<div w3-include-html="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/files/2017-1-1-bokeh_intro/notebook.html"></div>
 
