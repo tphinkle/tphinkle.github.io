@@ -13,8 +13,6 @@ Here are a couple simple examples, which you can find [the code](#code) for at t
 
 # Simple linked plots
 
-
-* <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -109,8 +107,6 @@ _Sources:_
 
 
 # Code <a name="code"></a>
-
-* <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 <title>plots</title>

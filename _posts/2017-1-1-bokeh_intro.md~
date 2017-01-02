@@ -64,7 +64,6 @@ _Sources:_
 # Histogram plot with brushing
 
 
-* <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
