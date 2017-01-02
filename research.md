@@ -22,7 +22,7 @@ Like electrons in the electronics we're all familiar with, ions can also carry a
 
 Along with collaborators, I showed that it is possible to create an ionic diode out of a pore with a thin metallic layer embedded on it. To do this, we deposited a ~10 nm-thick layer of gold onto a substrate and drilled ~10 nm in diameter holes through it with a [transmission electron microscope](https://en.wikipedia.org/wiki/Transmission_electron_microscopy). When a voltage is applied across the nanopore, the conducting gold layer polarizes leading to different ion charge concentrations inside the pore at opposite voltage polarities, resulting in an ionic diode.
 
-## Resistive pulse sensing
+## Resistive pulse sensing <a name="resistive_pulse_sensing"></a>
 
 Resistive pulse sensing is a means of measuring the properties of small particles by the conductance changes they induce when they pass through a small nano or microchannel. This technique gives insight into the properties of particles at the nanoscale, where they are invisible to optical detection and are otherwise difficult to study. This technique was originally introduced in the Coulter counter, where it is used to perform red blood cell counts in hospitals. The same technique is also currently being used for nanopore-based DNA sequencing.
 
