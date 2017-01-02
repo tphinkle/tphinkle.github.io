@@ -16,7 +16,7 @@ This was a collection of Python programs I wrote as part of a fellowship for cre
 
 ### [cell controller](https://github.com/tphinkle/cell_controller)
 
-I wrote this program to control a few measurement instruments I use for my cancer cell experiments. The program is written in C++ and Qt, and uses multi-threading to control a [high-speed camera](http://www.phantomhighspeed.com/Home/gclid/CjwKEAiAkajDBRCRq8Czmdj-yFgSJADikZggiwmCFoUakGlh04kgyB43FtlUQCRi1ahD8Q_LpKD7WxoCblnw_wcB), [data acquisition card](http://www.ni.com/data-acquisition/), and a syringe pump. 
+I wrote this program to control a few measurement instruments I use for my cancer cell experiments. The program is written in C++ and Qt, and uses multi-threading to control a [high-speed camera](http://www.phantomhighspeed.com/Home/gclid/CjwKEAiAkajDBRCRq8Czmdj-yFgSJADikZggiwmCFoUakGlh04kgyB43FtlUQCRi1ahD8Q_LpKD7WxoCblnw_wcB), [data acquisition card](http://www.ni.com/data-acquisition/), and a syringe pump.
 
 ### [spectranalyzer](https://github.com/tphinkle/spectranalyzer)
 
@@ -24,6 +24,8 @@ This was a quick program I wote in Python and PyQt to teach my niece about sound
 
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer_fft.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
+
+_Images:_ Microphone input signal (left), input PSD (right)
 
 
 
