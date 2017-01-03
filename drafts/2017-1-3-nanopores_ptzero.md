@@ -15,7 +15,7 @@ It is also possible to fabricate synthetic nanopores, which can be created using
 ### The electrical double layer
 In the bulk, a symmetric ion solution is composed of equal parts cation and anion and the total solution charge is neutral. As we approach a charged surface, the electric potential from the surface makes it more energetically favorable for ions of the opposite polarity--counterions--to populate the solution compared to coions. This region of net charge in the solution, approximately within ~1 nm of the surface, is known as the __electrical double layer__ or EDL. Suppose we have a charged cylindrical nanopore of variable radius; the following plot shows the fractional volume of charge in the EDL compared to in the bulk.
 
-<img src="http://tphinkle.github.io/files/2016-11-6-nanopores_pt0/fractional_volume.png" alt="fractional volume" style="width: 480px;" align="middle"/>
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/fractional_volume.png" alt="fractional volume" style="width: 480px;" align="middle"/>
 
 Notice that at around 100 nm the fraction of the ion solution within the EDL becomes appreciable, and rapidly increases as the pore shrinks further into the nanoscale. For this reason, even though we typically define nanopores as holes around 1 nm in size, nanopore-like behavior can exist for pores having diameters of tens of nanometers.
 
