@@ -5,7 +5,7 @@ category: Nanopores
 comments: True
 ---
 
-This is part one of a multi-part introduction series on studying nanopore phenomena with COMSOL.
+_This is part one of a multi-part introduction series on studying nanopore phenomena with COMSOL._
 
 ### Nanopore?
 The most precise definition of nanopore: a hole with opening diameter on the order of 1 nm in size. I'll be the first to admit that this definition is a little dry, but there are a number of reasons, both academic and practical, that make nanopores worth studying. Nanopores exist naturally in nature, where they can be found in cells' membranes and act as channels that allow water, ions, and biomolecules to pass through. Many natural nanopores have interesting transport properties; for example, potassium ions diffuse freely through a potassium channel while sodium ions are blocked, despite the two ions being nearly identical in size and charge. This type of transport regulation is made possible by the pore's shape and its interior surface charge.
