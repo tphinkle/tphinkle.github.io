@@ -19,6 +19,6 @@ In the bulk, a symmetric ion solution is composed of equal parts cation and anio
 
 Notice that at around 100 nm the fraction of the ion solution within the EDL becomes appreciable, and rapidly increases as the pore shrinks further into the nanoscale. For this reason, even though we typically define nanopores as holes around 1 nm in size, nanopore-like behavior can exist for pores having diameters of tens of nanometers.
 
-We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). Consider an infinite planar surface with constant surface charge $\sigma$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number density \(C^{+}_{0}$ and $C^{-}_{0}\) (the 0 subscript indicates that we are referring to the bulk concentration).
+We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). Consider an infinite planar surface with constant surface charge \(\sigma\), and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number density \(C^{+}_{0}\) and \(C^{-}_{0}\) (the 0 subscript indicates that we are referring to the bulk concentration).
 
 **Cite Israelichaveli**
