@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding nanopores with Python and COMSOL, Part 0: Nanopores and the Electrical double layer
+title: Nanopores part 0: the electrical double layer
 category: Science, Physics
 comments: True
 ---
