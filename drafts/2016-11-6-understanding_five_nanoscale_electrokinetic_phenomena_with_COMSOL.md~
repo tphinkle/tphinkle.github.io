@@ -1,16 +1,22 @@
 ---
 layout: post
-title: Understanding five electrokinetic phenomena in nanopores with COMSOL
+title: Understanding nanopores with COMSOL, Part 1: Electrical double layer
 category: Science, Physics
 comments: True
 ---
 
-COMSOL is a software application that allows you to simulate different types of physics using something called the [finite element method](https://en.wikipedia.org/wiki/Finite_element_method), or FEM. The basic idea behind FEM is that you take the system that you want to understand, break it down into many smaller parts, solve the relevant equations in each part, and stitch the solutions together at the end. This allows you to solve really complex physical situations that can't be handled analytically. There are people (programmers, physicists) that spend their whole academic careers developing these methods, and others, the 'consumers', that are just concerned with getting answers. COMSOL is great for the latter camp because it does not require extensive knowledge about the FEM method to get started.
+_This is part one of a multi-part introduction series on studying nanopore phenomena with COMSOL._
+
+### Nanopore?
+The most precise definition of nanopore: a hole with opening diameter on the order of 1 nm in size. I'll be the first to admit that this definition is a little dry and 
+
+### What is COMSOL?
+COMSOL is a software application that allows you to simulate different types of physics using something called the [finite element method](https://en.wikipedia.org/wiki/Finite_element_method), or FEM. The basic idea behind FEM is that you create a geometric fascimile of the system you want to study, break it down into many smaller parts, solve the relevant equations in each part, and stitch the solutions together at the end. This allows you to solve really complex physical situations that can't be handled analytically. There are people (programmers, physicists) that spend their whole academic careers developing these methods, and others, the 'consumers', that are just concerned with getting answers. COMSOL is great for the latter camp because it does not require extensive knowledge about the FEM method to get started.
 
 One thing I think COMSOL is useful for is gaining an intuition about processes that aren't very easily understandable. In this post I'll talk about 5 interesting phenomena surrounding my area of research, nanopores, using COMSOL. Data was generated entirely from COMSOL, and the plots are a mix of some taken from COMSOL, and others made using Python and matplotlib.
 
 # 1. The electrical double layer
-The EDL is the basis for everything whacky and counter intuitive that occurs in nanopores. When a charged surface comes in contact with a conducting medium, like electrolyte solution, free charges in the medium will redistribute to screen the charge of the surface. More specifically, charges of the same polarity (coions) are repelled from the surface while charges of the opposite polarity (counterions) are attracted. This screening layer is known as the electrical double layer, and typically ranges between 0.1 and 10 nm. The EDL can greatly influence the behavior of a system, especially in nanoscale systems where the total volume within 1 nm of a charged surface is significant. Another interesting thing to point out is that the 'importance' of surface effects scales like $1/R$, where R is the system size (e.g. diameter). One way to see this is to plot the volume fraction that is within $\lambda_{D}$ as a function of system size, as in the plot below. 
+The EDL is the basis for everything whacky and counter intuitive that occurs in nanopores. When a charged surface comes in contact with a conducting medium, like electrolyte solution, free charges in the conducting medium redistribute to screen the charge of the surface. More specifically, charges of the same polarity (coions) are repelled from the surface while charges of the opposite polarity (counterions) are attracted. This screening layer is known as the electrical double layer, and typically ranges between 0.1 and 10 nm. The EDL can greatly influence the behavior of a system, especially in nanoscale systems where the total volume within 1 nm of a charged surface is significant. Another interesting thing to point out is that the 'importance' of surface effects scales like $1/R$, where R is the system size (e.g. diameter). One way to see this is to plot the volume fraction that is within $\lambda_{D}$ as a function of system size, as in the plot below. 
 
 The plot shows that even at $\sim 20$ nm, the EDL is still only a small fraction of the total volume. However, past that point the fraction within $\lambda_{D}$ rises sharply.
 
@@ -45,6 +51,6 @@ We can also
 
 Ion current rectification (ICR) refers to a difference in nanopore conductance at opposite voltage polarities, which looks something like this in an IV curve:
 
-In order for ICR to occur, the pore's symmetry has to be broken
+
 
 

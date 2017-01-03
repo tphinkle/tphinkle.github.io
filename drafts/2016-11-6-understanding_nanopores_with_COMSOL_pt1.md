@@ -8,7 +8,21 @@ comments: True
 _This is part one of a multi-part introduction series on studying nanopore phenomena with COMSOL._
 
 ### Nanopore?
-The most precise definition of nanopore: a hole with opening diameter on the order of 1 nm in size. I'll be the first to admit that this definition is a little dry. But hang with me, nanopores are important for a number of reasons, both academic and practical. Nanopores are 
+The most precise definition of nanopore: a hole with opening diameter on the order of 1 nm in size. I'll be the first to admit that this definition is a little dry, but there are a number of reasons, both academic and practical, that make nanopores worth studying. Nanopores exist naturally in nature, where they can be found in cells' membranes and act as channels that allow water, ions, and biomolecules to pass through. Many natural nanopores have interesting transport properties; for example, potassium ions diffuse freely through a potassium channel while sodium ions are blocked, despite the two ions being nearly identical in size and charge. This type of transport regulation is made possible by the pore's shape and its interior surface charge.
+
+It is also possible to fabricate many different types of synthetic nanopores. Synthetic nanopores offer the advantage that their geometry may be tailored, whereas biological pores come only in fixed sizes. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### What is COMSOL?
 COMSOL is a software application that allows you to simulate different types of physics using something called the [finite element method](https://en.wikipedia.org/wiki/Finite_element_method), or FEM. The basic idea behind FEM is that you create a geometric fascimile of the system you want to study, break it down into many smaller parts, solve the relevant equations in each part, and stitch the solutions together at the end. This allows you to solve really complex physical situations that can't be handled analytically. There are people (programmers, physicists) that spend their whole academic careers developing these methods, and others, the 'consumers', that are just concerned with getting answers. COMSOL is great for the latter camp because it does not require extensive knowledge about the FEM method to get started.
