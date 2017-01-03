@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding nanopores with COMSOL, Part 1: Electrical double layer
+title: Understanding nanopores with Python and COMSOL, Part 0: Nanopores and the Electrical double layer
 category: Science, Physics
 comments: True
 ---
@@ -10,7 +10,14 @@ _This is part one of a multi-part introduction series on studying nanopore pheno
 ### Nanopore?
 The most precise definition of nanopore: a hole with opening diameter on the order of 1 nm in size. I'll be the first to admit that this definition is a little dry, but there are a number of reasons, both academic and practical, that make nanopores worth studying. Nanopores exist naturally in nature, where they can be found in cells' membranes and act as channels that allow water, ions, and biomolecules to pass through. Many natural nanopores have interesting transport properties; for example, potassium ions diffuse freely through a potassium channel while sodium ions are blocked, despite the two ions being nearly identical in size and charge. This type of transport regulation is made possible by the pore's shape and its interior surface charge.
 
-It is also possible to fabricate many different types of synthetic nanopores. Synthetic nanopores offer the advantage that their geometry may be tailored, whereas biological pores come only in fixed sizes. 
+It is also possible to fabricate synthetic nanopores, which can be created using electron beam drilling, carbon nanotubes, and chemical etching, to name a few. One distinct advantage of synthetic pores is the ability to tailor their geometry to the application at hand; biological pores have a fixed size and shape. There are a number of different applications for both types of nanopores, including creating ionic circuits, water desalination, DNA sequencing, and biomolecule detection and characterization. Going back to the basic definition of nanopores 'a 1 nm in diameter hole', it is not immediately apparent why they are able to perform in all these applications. It turns out that the key is in something called the 'electrical double layer'.
+
+### The electrical double layer
+In the bulk, a symmetric ion solution is composed of equal parts cation and anion and the total solution charge is neutral. As we approach a charged surface, the electric potential from the surface makes it more energetically favorable for ions of the opposite polarity--counterions--to populate the solution compared to coions. This region of net charge in the solution, approximately within ~1 nm of the surface, is known as the __electrical double layer__ or EDL. Suppose we have a charged cylindrical nanopore of variable radius; the following plot shows the fractional volume of charge in the EDL compared to in the bulk.
+
+<img src="http://tphinkle.github.io/files/2016-11-6-nanopores_pt0/fractional_volume.png" alt="fractional volume" style="width: 480px;" align="middle"/>
+
+**Cite Israelichaveli**
 
 
 
