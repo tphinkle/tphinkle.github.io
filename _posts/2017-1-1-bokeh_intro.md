@@ -115,6 +115,9 @@ This plot demonstrates Bokeh's 'brushing' feature, which allows you to highlight
 </html>
 
 
+# Conclusions
+There's definitely *waaaaay* more to Bokeh than I was able to explore in this blog post. What I like is that it's easy to get up-and-running, its high level interface means that you don't have to memorize use cases for hundreds of different commands like you have to with matplotlib, and the interactivity adds a flashy element to plots that makes them impressive to show off. But, it's apparent that to make the most of Bokeh one really needs to be running a Bokeh server to add dynamic processing capabilities to the plots. Maybe something for the future.
+
 
 # Code <a name="code"></a>
 <html>
