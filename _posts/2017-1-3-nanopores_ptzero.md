@@ -43,16 +43,18 @@ In the above equations, $$\psi$$ is the electrostatic potential arising from the
 
 $$
 \begin{equation}
-\tag{Debye-H\"uckel equation}
+\tag{Debye-Huckel equation}
 \frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon\epsilon_{0}}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
 \end{equation}
 $$
 
-The two boundary conditions for the 2nd order are:
+The two boundary conditions for the 2nd order differential equation are:
 
 1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
 2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
 
-which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively.
+which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. Solving the Debye-Hückel equation yields the following formula for the ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$, and the electrostatic potential $$\psi\left(x\right)$$:
+
+
 
 
