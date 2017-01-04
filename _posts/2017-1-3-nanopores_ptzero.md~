@@ -39,7 +39,14 @@ C^{\pm}=C_{0}e^{E^{\pm}/k_{B}T=C_{0}e^{\mp ze\psi/k_{B}T}
 \end{equation}
 $$
 
-In the above equations, $$\psi$$ is the electrostatic potential arising from the free ions and the surface charge, and $$\rho$$ is the net charge density at a given position. Note that because the boundary in our system is an infinite plane, we can reduce Poisson's equation to one-dimension, replacing the Laplace operator with a second derivative in one direction only, the $$x-$$direction. We combine the equations by inserting $$C^{\pm}$$ from the Boltzmann equation into the Poisson equation. Doing so, we arrive at the full __Debye-Hückel__ equation.
+In the above equations, $$\psi$$ is the electrostatic potential arising from the free ions and the surface charge, and $$\rho$$ is the net charge density at a given position. Note that because the boundary in our system is an infinite plane, we can reduce Poisson's equation to one-dimension, replacing the Laplace operator with a second derivative in one direction only, the $$x-$$direction. We combine the equations by inserting $$C^{\pm}$$ from the Boltzmann equation into the Poisson equation. Doing so, we arrive at the full __Debye-Hückel__ equation:
+
+$$
+\begin{equation}
+\tag{Debye-Hückel equation}
+\frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
+\end{equation}
+$$
 
 
 
