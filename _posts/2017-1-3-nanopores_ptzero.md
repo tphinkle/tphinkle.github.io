@@ -23,7 +23,13 @@ We can understand the formation of the electrical double layer as a competition 
 
 Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number densities $$C^{+}_{0}$$ and $$C^{-}_{0}$$ (0 denotes bulk concentration, +/- denote charge polarity). We seek to find the number density of each ion species in the solution. The relevant equations here are [Poisson's equation](https://en.wikipedia.org/wiki/Poisson's_equation) and the [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution).
 
-$$\nabla^{2}\psi=-\rho/\epsilon$$
+$$
+\begin{equation}
+\tag{*}
+\nabla^{2}\psi=-\rho/\epsilon$$
+\label{eqn:Poisson equation}
+\end{equation}
+$$
 
 
 

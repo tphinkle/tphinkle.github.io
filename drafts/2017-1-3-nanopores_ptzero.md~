@@ -19,7 +19,11 @@ In the bulk, a symmetric ion solution is composed of equal parts cation and anio
 
 Notice that at around 100 nm the fraction of the ion solution within the EDL becomes appreciable and rapidly increases as the pore shrinks further into the nanoscale. For this reason, even though we typically define nanopores as holes around 1 nm in size, nanopore-like behavior can exist for pores having diameters of tens of nanometers.
 
-We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number density $$C^{+}_{0}$$ and $$C^{-}_{0}$$ (0 denotes bulk concentration, +/- denote charge polarity).
+We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). 
+
+Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number densities $$C^{+}_{0}$$ and $$C^{-}_{0}$$ (0 denotes bulk concentration, +/- denote charge polarity). We seek to find the number density of each ion species in the solution. The relevant equations here are [Poisson's equation](https://en.wikipedia.org/wiki/Poisson's_equation) and the [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution).
+
+$$\nabla^{2}\psi=-\rho/\epsilon$$
 
 
 
