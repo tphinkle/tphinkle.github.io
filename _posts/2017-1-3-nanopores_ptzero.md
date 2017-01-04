@@ -64,6 +64,7 @@ $$
 $$
 \begin{equation}
 \gamma=\frac{e^{y_{0}/2}-1}{e^{y_{0}/2}+1}
+\end{equation}
 $$
 
 
