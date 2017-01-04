@@ -26,17 +26,18 @@ Consider an infinite planar surface with constant surface charge $$\sigma$$, and
 $$
 \begin{equation}
 \tag{Poisson equation}
-\nabla^{2}\psi=-\rho/\epsilon
-\label{eqn:Poisson equation}
+\nabla^{2}\psi=-\rho/\epsilon=-ze\left(C^{+}-C^{-}\right)/\epsilon
 \end{equation}
 $$
 
 $$
 \begin{equation}
 \tag{Boltzmann distribution}
-C^{\pm}=C_{0}e^{\mp ze\psi/k_{B}T}
+C^{\pm}=C_{0}e^{E^{\pm}/k_{B}T=C_{0}e^{\mp ze\psi/k_{B}T}
 \end{equation}
 $$
+
+In the above equations, $$\psi$$ is the electrostatic potential arising from the free ions and the surface charge, and $$\rho$$ is the net charge density at a given position. Note that because the boundary in our system is an infinite plane, we can reduce Poisson's equation to one-dimension, replacing the Laplace operator with a second derivative in one direction only, the $$x-$$direction. We combine the equations by inserting $$C^{\pm}$$ from the Boltzmann equation into the Poisson equation. Doing so, we arrive at the full __Debye-Hückel__ equation.
 
 
 
