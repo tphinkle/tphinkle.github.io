@@ -53,7 +53,22 @@ The two boundary conditions for the 2nd order differential equation are:
 1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
 2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
 
-which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. Solving the Poisson-Boltzmann equation yields the following formula for the ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$, and the electrostatic potential $$\psi\left(x\right)$$:
+which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
+
+$$
+\begin{equation}
+y=2\log\left(\frac{1-\gamma e^{-x'}}{1+\gamma e^{-x'}}\right)
+\end{equation}
+$$
+
+$$
+\begin{equation}
+\gamma=\frac{e^{y_{0}/2}-1}{e^{y_{0}/2}+1}
+$$
+
+
+
+
 
 
 

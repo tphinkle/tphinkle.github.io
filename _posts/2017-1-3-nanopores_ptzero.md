@@ -57,7 +57,7 @@ which come from electroneutrality and the requirement that there be no net elect
 
 $$
 \begin{equation}
-y=2\log\left(\frac{1-\gamma e^{-x'}}{1+\gamma e^{-x'}}
+y=2\log\left(\frac{1-\gamma e^{-x'}}{1+\gamma e^{-x'}}\right)
 \end{equation}
 $$
 
