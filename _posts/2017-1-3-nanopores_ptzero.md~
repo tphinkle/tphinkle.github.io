@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nanopores part 0: Introduction to nanopores and the electrical double layer
+title: Nanopores part 0, Introduction to nanopores and the electrical double layer
 category: Science, Physics
 comments: True
 ---
@@ -15,10 +15,21 @@ It is also possible to fabricate synthetic nanopores, which can be created using
 ### The electrical double layer
 In the bulk, a symmetric ion solution is composed of equal parts cation and anion and the total solution charge is neutral. As we approach a charged surface, the electric potential from the surface makes it more energetically favorable for ions of the opposite polarity--counterions--to populate the solution compared to coions. This region of net charge in the solution, approximately within ~1 nm of the surface, is known as the __electrical double layer__ or EDL. Suppose we have a charged cylindrical nanopore of variable radius; the following plot shows the fractional volume of charge in the EDL compared to in the bulk.
 
-<img src="http://tphinkle.github.io/files/2016-11-6-nanopores_pt0/fractional_volume.png" alt="fractional volume" style="width: 480px;" align="middle"/>
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/fractional_volume.png" alt="fractional volume" style="width: 480px;" align="middle"/>
 
-Notice that at around 100 nm the fraction of the ion solution within the EDL becomes appreciable, and rapidly increases as the pore shrinks further into the nanoscale. For this reason, even though we typically define nanopores as holes around 1 nm in size, nanopore-like behavior can exist for pores having diameters of tens of nanometers.
+Notice that at around 100 nm the fraction of the ion solution within the EDL becomes appreciable and rapidly increases as the pore shrinks further into the nanoscale. For this reason, even though we typically define nanopores as holes around 1 nm in size, nanopore-like behavior can exist for pores having diameters of tens of nanometers.
 
-We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). Consider an infinite planar surface with constant surface charge $\sigma$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number density $C^{+}_{0}$ and $C^{-}_{0}$ ($0$ indicates that we are referring to the bulk concentration).
+We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). 
 
-**Cite Israelichaveli**
+Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number densities $$C^{+}_{0}$$ and $$C^{-}_{0}$$ (0 denotes bulk concentration, +/- denote charge polarity). We seek to find the number density of each ion species in the solution. The relevant equations here are [Poisson's equation](https://en.wikipedia.org/wiki/Poisson's_equation) and the [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution).
+
+$$
+\begin{equation}
+\tag{*}
+\nabla^{2}\psi=-\rho/\epsilon$$
+\label{eqn:Poisson equation}
+\end{equation}
+$$
+
+
+
