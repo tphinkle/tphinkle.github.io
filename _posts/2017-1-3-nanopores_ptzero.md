@@ -43,7 +43,7 @@ In the above equations, $$\psi$$ is the electrostatic potential arising from the
 
 $$
 \begin{equation}
-\tag{Debye-Hückel equation}
+\tag{Debye-H\"uckel equation}
 \frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
 \end{equation}
 $$
