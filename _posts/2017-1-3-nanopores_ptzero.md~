@@ -61,7 +61,7 @@ y=2\log\left(\frac{1-\gamma e^{-\kappa x}}{1+\gamma e^{-\kappa x}}\right)
 \end{equation}
 $$,
 
-where $$\gamma=\frac{e^{y_{0}/2}-1}{e^{y_{0}/2}+1}$$, $$y=ze\psi/k_{B}T$$, and $$\kappa^{2}=\frac{2z^{2}e^{2}C_{0}}{\epsilon_{r}\epsilon_{0}k_{B}T}. $$\kappa^{-1}$$ is known as the Debye layer, and is a measure of the size of the EDL. Notice that $$\kappa$$ does **not** depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions.
+where $$\gamma=\frac{e^{y_{0}/2}-1}{e^{y_{0}/2}+1}$$, $$y=ze\psi/k_{B}T$$, and $$\kappa^{2}=\frac{2z^{2}e^{2}C_{0}}{\epsilon_{r}\epsilon_{0}k_{B}T}$$. $$\kappa^{-1}$$ is known as the Debye layer, and is a measure of the size of the EDL. Notice that $$\kappa$$ does **not** depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions.
 
 
 
