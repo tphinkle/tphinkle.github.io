@@ -31,5 +31,12 @@ $$
 \end{equation}
 $$
 
+$$
+\begin{equation}
+\tag{Boltzmann distribution}
+C^{\pm}=C_{0}e^{\mp ze\psi/k_{B}T}
+\end{equation}
+$$
+
 
 
