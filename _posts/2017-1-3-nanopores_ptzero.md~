@@ -28,7 +28,7 @@ Consider an infinite planar surface with constant surface charge $$\sigma$$, and
 $$
 \begin{equation}
 \tag{Poisson equation}
-\nabla^{2}\psi=-\rho/\epsilon=-ze\left(C^{+}-C^{-}\right)/\epsilon
+\nabla^{2}\psi=-\rho/\epsilon=-ze\left(C^{+}-C^{-}\right)/\epsilon\epsilon_{0}
 \end{equation}
 $$
 
@@ -43,10 +43,16 @@ In the above equations, $$\psi$$ is the electrostatic potential arising from the
 
 $$
 \begin{equation}
-\tag{Debye-H\"u ckel equation}
-\frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
+\tag{Debye-H\"uckel equation}
+\frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon\epsilon_{0}}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
 \end{equation}
 $$
 
+The two boundary conditions for the 2nd order are:
+
+1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
+2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
+
+which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively.
 
 
