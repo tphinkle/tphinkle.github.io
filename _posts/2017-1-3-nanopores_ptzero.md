@@ -25,7 +25,7 @@ Consider an infinite planar surface with constant surface charge $$\sigma$$, and
 
 $$
 \begin{equation}
-\tag{*}
+\tag{Poisson equation}
 \nabla^{2}\psi=-\rho/\epsilon
 \label{eqn:Poisson equation}
 \end{equation}
