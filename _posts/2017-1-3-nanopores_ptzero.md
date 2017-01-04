@@ -21,12 +21,12 @@ Notice that at around 100 nm the fraction of the ion solution within the EDL bec
 
 We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). 
 
-Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions dissolved in the solution with number densities $$C^{+}_{0}$$ and $$C^{-}_{0}$$ (0 denotes bulk concentration, +/- denote charge polarity). We seek to find the number density of each ion species in the solution. The relevant equations here are [Poisson's equation](https://en.wikipedia.org/wiki/Poisson's_equation) and the [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution).
+Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions with the same valency $$z$$ dissolved in the solution with bulk concentratoin $$C_{0}$$. We seek to find the number density of each ion species $$C^{+}$$ and $$C^{-}$$ in the solution. The relevant equations here are [Poisson's equation](https://en.wikipedia.org/wiki/Poisson's_equation) and the [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution).
 
 $$
 \begin{equation}
 \tag{Poisson equation}
-\nabla^{2}\psi=-\rho/\epsilon
+\nabla^{2}\psi=-\rho/\epsilon=-ze\left(C^{+}-C^{-}\right)/\epsilon
 \label{eqn:Poisson equation}
 \end{equation}
 $$
@@ -37,6 +37,8 @@ $$
 C^{\pm}=C_{0}e^{\mp ze\psi/k_{B}T}
 \end{equation}
 $$
+
+In the above equations, $$\psi$$ is the electrostatic potential arising from the free ions and the surface charge, and $$\rho$$ is the net charge density at a given position.
 
 
 
