@@ -28,7 +28,7 @@ Consider an infinite planar surface with constant surface charge $$\sigma$$, and
 $$
 \begin{equation}
 \tag{Poisson equation}
-\nabla^{2}\psi=-\rho/\epsilon=-ze\left(C^{+}-C^{-}\right)/\epsilon\epsilon_{0}
+\nabla^{2}\psi=-\rho/\epsilon_{r}\epsilon_{0}=-ze\left(C^{+}-C^{-}\right)/\epsilon_{r}\epsilon_{0}
 \end{equation}
 $$
 
@@ -39,12 +39,12 @@ C^{\pm}=C_{0}e^{E^{\pm}/k_{B}T}=C_{0}e^{\mp ze\psi/k_{B}T}
 \end{equation}
 $$
 
-In the above equations, $$\psi$$ is the electrostatic potential arising from the free ions and the surface charge, and $$\rho$$ is the net charge density at a given position. Note that because the boundary in our system is an infinite plane, we can reduce Poisson's equation to one-dimension, replacing the Laplace operator with a second derivative in one direction only, the $$x-$$direction. We combine the equations by inserting $$C^{\pm}$$ from the Boltzmann equation into the Poisson equation. Doing so, we arrive at the full __Debye-Hückel__ equation:
+In the above equations, $$\psi$$ is the electrostatic potential arising from the free ions and the surface charge, and $$\rho$$ is the net charge density at a given position. Note that because the boundary in our system is an infinite plane, we can reduce Poisson's equation to one-dimension, replacing the Laplace operator with a second derivative in one direction only, the $$x-$$direction. We combine the equations by inserting $$C^{\pm}$$ from the Boltzmann equation into the Poisson equation. Doing so, we arrive at the full __Poisson-Boltzmann__ equation:
 
 $$
 \begin{equation}
-\tag{Debye-Huckel equation}
-\frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon\epsilon_{0}}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
+\tag{Poisson-Boltzmann equation}
+\frac{d^2\psi}{dx^{2}}=\frac{2zeC_{0}}{\epsilon_{r}\epsilon_{0}}\text{sinh}\left(\frac{ze\psi}{k_{B}T}\right)
 \end{equation}
 $$
 
@@ -53,7 +53,22 @@ The two boundary conditions for the 2nd order differential equation are:
 1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
 2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
 
-which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. Solving the Debye-Hückel equation yields the following formula for the ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$, and the electrostatic potential $$\psi\left(x\right)$$:
+which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
+
+$$
+\begin{equation}
+y=2\log\left(\frac{1-\gamma e^{-x'}}{1+\gamma e^{-x'}}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+\gamma=\frac{e^{y_{0}/2}-1}{e^{y_{0}/2}+1}
+$$
+
+
+
+
 
 
 
