@@ -13,7 +13,11 @@ The most precise definition of nanopore: a hole with opening diameter on the ord
 It is also possible to fabricate synthetic nanopores, which can be created using electron beam drilling, carbon nanotubes, and chemical etching, to name a few. One distinct advantage of synthetic pores is the ability to tailor their geometry to the application at hand; biological pores have a fixed size and shape. There are a number of different applications for both types of nanopores, including creating ionic circuits, water desalination, DNA sequencing, and biomolecule detection and characterization. Going back to the basic definition of nanopores 'a 1 nm in diameter hole', it is not immediately apparent why they are able to perform in all these applications. It turns out that the key is in something called the 'electrical double layer'. In the rest of this blog post we'll look into the properties of the nanopores, and in the [next post](https://tphinkle.github.io/blog/2016-11-1-nanopores_pt1) we'll explore why the EDL is responsible for nanopore's novel transport properties.
 
 ### The electrical double layer
-In the bulk, a symmetric ion solution is composed of equal parts cation and anion and the total solution charge is neutral. As we approach a charged surface, the electric potential from the surface makes it more energetically favorable for ions of the opposite polarity--counterions--to populate the solution compared to coions. This region of net charge in the solution, approximately within ~1 nm of the surface, is known as the __electrical double layer__ or EDL. Suppose we have a charged cylindrical nanopore of variable radius; the following plot shows the fractional volume of the EDL compared to the bulk, for a typical EDL length of 1 nm.
+In the bulk, a symmetric ion solution is composed of equal parts cation and anion and the total solution charge is neutral. As we approach a charged surface, the electric potential from the surface makes it more energetically favorable for ions of the opposite polarity--counterions--to populate the solution compared to coions. This region of net charge in the solution, approximately within ~1 nm of the surface, is known as the __electrical double layer__ or EDL. In reality, the composition of solution in the vicinity of a charged surface is highly complex. For our purposes, it will be sufficient to break the solution down into two regions, the EDL and the bulk. Here's a cartoon showing what the EDL looks like:
+
+<div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/edl.png" alt="Grahame solution" style="width: 480px;" align="middle"/></div>
+
+Suppose we have a charged cylindrical nanopore of variable radius; the following plot shows the fractional volume of the EDL compared to the bulk, for a typical EDL length of 1 nm.
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/fractional_volume.png" alt="fractional volume" style="width: 480px;" align="middle"/></div>
 
@@ -79,17 +83,28 @@ In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's me
 
 Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the surface charge density, $$\sigma$$. Note that solving for $$\psi$$, $$C^{+}$$, and $$C^{-}$$ requires knowing the surface potential $$\psi_{0}$$. This can be done via the Grahame-equation above, but must be solved numerically since it is a transcendental equation for $$\psi_{0}$$ given $$\sigma$$. I used the [scipy.optimize](https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html) package to solve the equation. Here's a plot of the relationship between $$\sigma$$ and $$\phi$$ from the Grahame equation:
 
-<div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/sigma_potential.png" alt="Grahame solution" style="width: 480px;" align="middle"/></div>
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/sigma_potential_1.png" alt="Grahame solution" style="width: 480px;" align="middle"/>
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/sigma_potential_0.png" alt="Grahame solution" style="width: 480px;" align="middle"/>
+</div>
 
 Interestingly, the relationship isn't perfectly linear as one might naively think. Without the ions (i.e. just a charged plate), the surface potential is directly proportional to the surface charge. 
 
 The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface. 
 
-<div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential.png" alt="potential" style="width: 480px;" align="middle"/></div>
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential_1.png" alt="potential" style="width: 480px;" align="middle"/>
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential_0.png" alt="potential" style="width: 480px;" align="middle"/>
+</div>
+
+A couple things to point out. First, note that the surface potential $$\psi_{0}$ approximately linearly depends on the surface charge $$$\sigma$$, as predicted from the Grahame equation above. The sharp gradient in the electric potential within the EDL means there will be large electric fields, but these fields die off in the bulk as the potential becomes constant.
 
 
 
-<div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations.png" alt="concentrations" style="width: 960px;" align="middle"/></div>
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_1.png" alt="concentrations" style="width: 960px;" align="middle"/>
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_0.png" alt="concentrations" style="width: 960px;" align="middle"/>
+</div>
 
 
 
