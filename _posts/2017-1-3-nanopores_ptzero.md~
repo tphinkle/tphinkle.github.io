@@ -5,7 +5,7 @@ category: Science, Physics
 comments: True
 ---
 
-_This is part one of a multi-part introduction series on studying nanopore phenomena with COMSOL._
+_This is the first entry in a multi-part introductory series on nanopores._
 
 ### Nanopore?
 The most precise definition of nanopore: a hole with opening diameter on the order of 1 nm in size. I'll be the first to admit that this definition is a little dry, but there are a number of reasons, both academic and practical, that make nanopores worth studying. Nanopores exist naturally in nature, where they can be found in cells' membranes and act as channels that enable transport of water molecules, ions, and biomolecules. Many natural nanopores have interesting transport properties; for example, potassium ions diffuse freely through a potassium channel while sodium ions are blocked, despite the two ions being nearly identical in size and charge.
@@ -106,17 +106,9 @@ Here are some plots of the ion number densities. The key results here are that t
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_1.png" alt="concentrations" style="width: 960px;" align="middle"/>
 
 #### 100 mol/m$$^{3}$$
+
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_0.png" alt="concentrations" style="width: 960px;" align="middle"/>
 </div>
 
 
 That's about it for the EDL! In future posts, I'll get into how the EDL affects transport in nanopores.
-
-
-
-
-
-
-
-
-
