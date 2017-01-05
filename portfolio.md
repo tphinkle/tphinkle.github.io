@@ -29,6 +29,8 @@ I wrote this program to control a few measurement instruments I use for my cance
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/images/portfolio/cell_controller/demo_0.gif" alt="cell_controller gif" style="width: 800px;" align="middle"/></div>
 
+_Gif_: The application running. The left plot shows the ionic current; the right plot is grabbed from a high-speed camera.
+
 ### [spectranalyzer](https://github.com/tphinkle/spectranalyzer) <a name="spectranalyzer"></a>
 
 This was a quick program I wote in Python and PyQt to teach my niece about sound, frequencies, etc. The app takes in sound from a connected microphone and displays the waveform or the power spectrum (PSD) to the screen.
