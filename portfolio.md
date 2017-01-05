@@ -6,7 +6,7 @@ permalink: /portfolio/
 
 I've written a few different pieces of software over the past two years for research and various other miscellaneous purposes. Here's a quick summary of some of the projects that I've completed.
 
-### [nanoIV](https://github.com/tphinkle/nanoIV) <a name="nanoIV"></a>
+### [nanoIV](https://github.com/tphinkle/nanoIV) <a name="nanoIV"></a> <img src="http://tphinkle.github.io/images/portfolio/nanoIV/logo.png" alt="nanoIV logo" style="width: 64px;" align="middle"/>
 
 This is a GUI program written in C++ and Qt that enables remote control of a Keithley picoammeter. Two specific measurement protocols, IV curve and time-series measurement, are set-up and available simultaneously. The program displays the data in real-time and can be used to save the data. A separate script written in Python can be used to create a formatted Excel document from the acquired data. This was written to make my lab's IV curve measurements more efficient and to provide real-time feedback on the noise characteristics of the systems we measure.
 
