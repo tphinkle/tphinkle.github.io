@@ -31,8 +31,10 @@ I wrote this program to control a few measurement instruments I use for my cance
 
 This was a quick program I wote in Python and PyQt to teach my niece about sound, frequencies, etc. The app takes in sound from a connected microphone and displays the waveform or the power spectrum (PSD) to the screen.
 
+<div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer_fft.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
+</div>
 
 _Images:_ Microphone input signal (left), input PSD (right)
 
