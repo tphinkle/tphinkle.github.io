@@ -66,7 +66,7 @@ $$
 \end{equation}
 $$,
 
-where $$\psi^{*}=ze\psi/k_{B}T$$, and $$\kappa^{2}=\frac{2z^{2}e^{2}C_{0}}{\epsilon_{r}\epsilon_{0}k_{B}T}$$. The electrostatic potential at the surface, $$\psi_{0}$$, is related to the surface charge density via the __Grahame equation__:
+where $$\psi^{*}=ze\psi/k_{B}T$$, and $$\kappa=\sqrt{\frac{2z^{2}e^{2}C_{0}}{\epsilon_{r}\epsilon_{0}k_{B}T}}$$. The electrostatic potential at the surface, $$\psi_{0}$$, is related to the surface charge density via the __Grahame equation__:
 
 $$
 \begin{equation}
