@@ -83,7 +83,7 @@ Plugging the solution for the electrostatic potential back into the Boltzmann eq
 
 The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface. 
 
-<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential.png" alt="potential" style="width: 480px;" align="middle"/> 
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential.png" alt="potential" style="width: 240px;" align="middle"/> 
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations.png" alt="concentrations" style="width: 480px;" align="middle"/>
 
 
