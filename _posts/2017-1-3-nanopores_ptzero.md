@@ -81,11 +81,15 @@ Plugging the solution for the electrostatic potential back into the Boltzmann eq
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/sigma_potential.png" alt="Grahame solution" style="width: 480px;" align="middle"/></div>
 
+Interestingly, the relationship isn't perfectly linear as one might naively think. Without the ions (i.e. just a charged plate), the surface potential is directly proportional to the surface charge. 
+
 The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface. 
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential.png" alt="potential" style="width: 480px;" align="middle"/></div>
 
-<div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations.png" alt="concentrations" style="width: 480px;" align="middle"/></div>
+
+
+<div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations.png" alt="concentrations" style="width: 960px;" align="middle"/></div>
 
 
 
