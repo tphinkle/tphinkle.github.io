@@ -53,7 +53,7 @@ The two boundary conditions for the 2nd order differential equation are:
 1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
 2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
 
-which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
+which come from the requirements that the solution be neutral overall, and that there are no electric fields in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
 
 $$
 \begin{equation}
@@ -71,12 +71,16 @@ $$
 $$
 
 
-In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's measured instead. $$\kappa^{-1}$$ is known as the __Debye length__, an important parameter which is the measure of the size of the EDL. Notice that $$\kappa$$ does **not** depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions. Here's a plot of the Debye length $$\kappa^{-1}$$ for different bulk concentrations. Since $$100$$ mol/L is a common solution concentration, a rule-of-thumb is that the EDL is on order 1 nm thick, although it certainly deviates from that value at more extreme concentrations.
+In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's measured instead. $$\kappa^{-1}$$ is known as the __Debye length__, an important parameter which is the measure of the size of the EDL. Notice that $$\kappa$$ does _not_ depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions. Here's a plot of the Debye length $$\kappa^{-1}$$ for different bulk concentrations. Since $$100$$ mol/L is a common solution concentration, a rule-of-thumb is that the EDL is on order 1 nm thick, although it certainly deviates from that value at more extreme concentrations.
 
 
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/debye_length.png" alt="fractional volume" style="width: 480px;" align="middle"/>
 
-Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the most important parameters, namely the surface charge density $$\sigma$$ and the bulk concentration $$\sigma$$.
+Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the most important parameters, namely the surface charge density $$\sigma$$ and the bulk concentration $$\sigma$$. Note that solving for $$\psi$$, $$C^{+}$$, and $$C^{-}$$ requires knowing the surface potential. This can be done via the Grahame-equation above, but must be solved numerically since it is a transcendental equation for $$\psi_{0}$$ given $$\sigma$$. I used the [scipy.optimize](https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html) package to solve the equation.
+
+That's about it for the EDL! Although seemingly inoccuous, the EDL is responsible for the non-trivial parts of nanopore behavior.
+
+
 
 
 

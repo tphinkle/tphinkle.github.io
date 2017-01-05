@@ -53,10 +53,11 @@ The two boundary conditions for the 2nd order differential equation are:
 1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
 2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
 
-which come from electroneutrality and the requirement that there be no net electric-field in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
+which come from the requirements that the solution be neutral overall, and that there are no electric fields in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
 
 $$
 \begin{equation}
+\tag{Electric potential}
 y=2\log\left(\frac{1-\gamma e^{-\kappa x}}{1+\gamma e^{-\kappa x}}\right)
 \end{equation}
 $$,
@@ -76,7 +77,9 @@ In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's me
 
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/debye_length.png" alt="fractional volume" style="width: 480px;" align="middle"/>
 
-Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the most important parameters, namely the surface charge density $$\sigma$$ and the bulk concentration $$\sigma$$.
+Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the most important parameters, namely the surface charge density $$\sigma$$ and the bulk concentration $$\sigma$$. Note that solving for $$\psi$$, $$C^{+}$$, and $$C^{-}$$ requires knowing the surface potential. This can be done via the Grahame-equation above, but must be solved numerically since it is a transcendental equation for $$\psi_{0}$$ given $$\sigma$$. I used the [scipy.optimize](https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html) package to solve the equation.
+
+That's about it for the EDL! Although seemingly inoccuous, the EDL is responsible for the non-trivial parts of nanopore behavior.
 
 
 
