@@ -97,7 +97,7 @@ The following two plots show the electrostatic potential and ion number densitie
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential_0.png" alt="potential" style="width: 480px;" align="middle"/>
 </div>
 
-A couple things to point out. First, note that the surface potential $$\psi_{0}$ approximately linearly depends on the surface charge $$$\sigma$$, as predicted from the Grahame equation above. The sharp gradient in the electric potential within the EDL means there will be large electric fields, but these fields die off in the bulk as the potential becomes constant.
+A couple things to point out. First, note that the surface potential $$\psi_{0}$$ approximately linearly depends on the surface charge $$$\sigma$$, as predicted from the Grahame equation above. The sharp gradient in the electric potential within the EDL means there will be large electric fields, but these fields die off in the bulk as the potential becomes constant.
 
 
 
