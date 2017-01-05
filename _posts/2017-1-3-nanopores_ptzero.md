@@ -75,9 +75,18 @@ $$
 In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's measured instead. $$\kappa^{-1}$$ is known as the __Debye length__, an important parameter which is the measure of the size of the EDL. Notice that $$\kappa$$ does _not_ depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions. Here's a plot of the Debye length $$\kappa^{-1}$$ for different bulk concentrations. Since $$100$$ mol/L is a common solution concentration, a rule-of-thumb is that the EDL is on order 1 nm thick, although it certainly deviates from that value at more extreme concentrations.
 
 
-<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/debye_length.png" alt="fractional volume" style="width: 480px;" align="middle"/>
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/debye_length.png" alt="debye length" style="width: 480px;" align="middle"/>
 
-Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the most important parameters, namely the surface charge density $$\sigma$$ and the bulk concentration $$\sigma$$. Note that solving for $$\psi$$, $$C^{+}$$, and $$C^{-}$$ requires knowing the surface potential. This can be done via the Grahame-equation above, but must be solved numerically since it is a transcendental equation for $$\psi_{0}$$ given $$\sigma$$. I used the [scipy.optimize](https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html) package to solve the equation.
+Plugging the solution for the electrostatic potential back into the Boltzmann equation yields the equations for $$C^{\pm}$$. With equations in-hand, we can begin to understand the structure of the EDL. Let's take a look at the most relevant features, the electrostatic potential $$\psi$$, the number densities of each species $$C^{\pm}$$, and the difference in number densities of the two species $$C^{+}-C^{-}$$, which is proportional to the charge density in the solution. We'll focus on exploring the relationship between these features and the surface charge density, $$\sigma$$. Note that solving for $$\psi$$, $$C^{+}$$, and $$C^{-}$$ requires knowing the surface potential $$\psi_{0}$$. This can be done via the Grahame-equation above, but must be solved numerically since it is a transcendental equation for $$\psi_{0}$$ given $$\sigma$$. I used the [scipy.optimize](https://docs.scipy.org/doc/scipy-0.18.1/reference/optimize.html) package to solve the equation. Here's a plot of the relationship between $$\sigma$$ and $$\phi$$ from the Grahame equation:
+
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/sigma_potential.png" alt="Grahame solution" style="width: 480px;" align="middle"/>
+
+The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface. 
+
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential.png" alt="potential" style="width: 480px;" align="middle"/> 
+<img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations.png" alt="concentrations" style="width: 480px;" align="middle"/>
+
+
 
 That's about it for the EDL! Although seemingly inoccuous, the EDL is responsible for the non-trivial parts of nanopore behavior.
 
