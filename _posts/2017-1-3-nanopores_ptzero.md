@@ -57,7 +57,7 @@ The two boundary conditions for the 2nd order differential equation are:
 1. $$\int_{0}^{\infty}\rho\left(x\right)\text{dx}=\sigma$$ and
 2. $$\frac{d\psi}{dx}\vert_{x\rightarrow\infty}=0$$,
 
-which come from the requirements that the solution is neutral overall, and that there are no electric fields in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the Debye-Hückel equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
+which come from the requirements that the solution is neutral overall, and that there are no electric fields in the bulk, respectively. The non-linear Poisson-Boltzmann equation can be linearized and easily solved if $$ze\psi/k_{B}T\ll1$$, leading to the __Debye-Hückel__ equation, a good approximation in many cases. However, there is still an analytic solution in the general case. Solving the Poisson-Boltzmann equation yields the following formula for the electrostatic potential $$\psi\left(x\right)$$, and hence, the  ion number densities $$C^{+}\left(x\right)$$ and $$C^{-}\left(x\right)$$:
 
 $$
 \begin{equation}
@@ -87,33 +87,27 @@ Plugging the solution for the electrostatic potential back into the Boltzmann eq
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/sigma_potential_0.png" alt="Grahame solution" style="width: 480px;" align="middle"/>
 </div>
 
-Interestingly, the relationship isn't perfectly linear as one might naively think. Without the ions (i.e. just a charged plate), the surface potential is directly proportional to the surface charge. 
+Interestingly, the relationship isn't perfectly linear as one might naively think. Without the ions (i.e. just a charged plate), the surface potential is directly proportional to the surface charge. Notice that the surface potential is higher when the solution is more dilute; this makes sense, because the same charge is screened over a greater distance, and the electric potential is proportional to the inverse of the distance; because the screening ions are at a greater distance from the surface, they contribute less positive potential.
 
-The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface. 
+The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface for two different solution concentrations, $$C_{0}=1/N$$ mol/m$$^{3}$$, and $$C_{0}=100/N$$ mol/m$$^{3}$$. 
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential_1.png" alt="potential" style="width: 480px;" align="middle"/>
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential_0.png" alt="potential" style="width: 480px;" align="middle"/>
 </div>
 
-A couple things to point out. First, note that the surface potential $$\psi_{0}$$ approximately linearly depends on the surface charge $$$\sigma$$, as predicted from the Grahame equation above. The sharp gradient in the electric potential within the EDL means there will be large electric fields, but these fields die off in the bulk as the potential becomes constant.
+A couple things to point out. First, note that the surface potential $$\psi_{0}$$ matches the results given by the Grahame equation above. In both cases there are sharp potential changes in the EDL that taper off away from the surface. This reflects the fact that the electric fields die off in the bulk.
+
+Here are some plots of the ion number densities. The key results here are that the difference in densities, $$C^{+}-C^{-}$$, which is proportional to the net volume charge can be very large, and that the total ion number density $$C^{+}+C^{-}$$ can greatly exceed the bulk concentration $$C_{0}$$.
 
 
-
+#### 1 mol/m$$^{3}$$
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_1.png" alt="concentrations" style="width: 960px;" align="middle"/>
+
+#### 100 mol/m$$^{3}$$
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_0.png" alt="concentrations" style="width: 960px;" align="middle"/>
 </div>
 
 
-
-That's about it for the EDL! Although seemingly inoccuous, the EDL is responsible for the non-trivial parts of nanopore behavior.
-
-
-
-
-
-
-
-
-
+That's about it for the EDL! In future posts, I'll get into how the EDL affects transport in nanopores.
