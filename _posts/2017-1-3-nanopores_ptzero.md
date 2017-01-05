@@ -107,6 +107,7 @@ Here are some plots of the ion number densities. The key results here are that t
 
 #### 100 mol/m$$^{3}$$
 
+<div style="text-align:center">
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/concentrations_0.png" alt="concentrations" style="width: 960px;" align="middle"/>
 </div>
 
