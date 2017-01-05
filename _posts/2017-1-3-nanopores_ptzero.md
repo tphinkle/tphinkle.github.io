@@ -66,7 +66,7 @@ where $$\gamma=\frac{e^{y_{0}/2}-1}{e^{y_{0}/2}+1}$$, $$y=ze\psi/k_{B}T$$, and $
 $$
 \begin{equation}
 \tag{Grahame equation}
-\sigma=epsilon_{0}\epsilon_{r}\psi_{0}\kappa^{-1}\left[\frac{2k_{B}T}{ze\psi}*\sinh\left(\frac{z^{2}e\psi}{2}\right)\right]
+\sigma=\epsilon_{0}\epsilon_{r}\psi_{0}\kappa^{-1}\left[\frac{2k_{B}T}{ze\psi}\sinh\left(\frac{z^{2}e\psi}{2}\right)\right]
 \end{equation}
 $$
 
