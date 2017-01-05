@@ -76,7 +76,7 @@ $$
 $$
 
 
-In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's measured instead. $$\kappa^{-1}$$ is known as the __Debye length__ $$\lambda_{D}$$, an important parameter which is the measure of the size of the EDL. Notice that the Debye length does _not_ depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions. Here's a plot of the Debye length for different bulk concentrations.
+In an experiment we don't know $$\sigma$$, and $$\psi_{0}$$ is usually what's measured instead. We define the __Debye length__ $$\lambda_{D}\equiv\kappa^{-1}$$, an important parameter which is the measure of the size of the EDL. Notice that the Debye length does _not_ depend on the surface charge $$\sigma$$, but does depend on the bulk ion concentration $$C_{0}$$. This means that highly concentrated ion solutions screen over shorter lengths than diffuse solutions. Here's a plot of the Debye length for different bulk concentrations.
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/debye_length.png" alt="debye length" style="width: 480px;" align="middle"/></div>
 
