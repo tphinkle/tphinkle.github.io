@@ -57,6 +57,7 @@ which come from the requirements that the solution be neutral overall, and that 
 
 $$
 \begin{equation}
+\tag{Electric potential}
 y=2\log\left(\frac{1-\gamma e^{-\kappa x}}{1+\gamma e^{-\kappa x}}\right)
 \end{equation}
 $$,
