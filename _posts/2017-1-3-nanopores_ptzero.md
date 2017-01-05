@@ -71,7 +71,7 @@ where $$\psi^{*}=ze\psi/k_{B}T$$, and $$\kappa=\sqrt{\frac{2z^{2}e^{2}C_{0}}{\ep
 $$
 \begin{equation}
 \tag{Grahame equation}
-\sigma=\epsilon_{0}\epsilon_{r}\psi_{0}\kappa^{-1}\left[\frac{2}{z\psi^{*}_{0}}\sinh\left(\frac{z\psi^{*}_{0}}{2}\right)\right]
+\sigma=\frac{\epsilon_{0}\epsilon_{r}\psi_{0}}{\lambda_{D}}\left[\frac{2}{z\psi^{*}_{0}}\sinh\left(\frac{z\psi^{*}_{0}}{2}\right)\right]
 \end{equation}
 $$
 
