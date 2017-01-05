@@ -18,7 +18,7 @@ _Image:_ Program interface. The top plot is a measured device I-V curve; the bot
 
 This was a collection of Python programs I wrote as part of a fellowship for creating an open-source data analysis package for [resistive pulse experiments](https://tphinkle.github.io/research/#resistive_pulse_sensing). The total package consists of a GUI program for detecting, validating, and saving resistive pulse events in time-series data, and a back-end library for analyzing the data.
 
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/full_view.png" alt="pore_stats view" style="width: 800px;" align="middle"/>
+<div style="text-align:center"><img src="http://tphinkle.github.io/images/portfolio/pore_stats/full_view.png" alt="pore_stats view" style="width: 800px;" align="middle"/></div>
 
 _Image_: Resistive pulse event extraction program interface. Top plot: the total time-series; bottom-left plot: a single targeted event; bottom-right plot: duration-amplitude scatter plot of all the events.
 
