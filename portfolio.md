@@ -23,12 +23,12 @@ This was a collection of Python programs I wrote as part of a fellowship for cre
 _Image_: Resistive pulse event extraction program interface. Top plot: the total time-series; bottom-left plot: a single targeted event; bottom-right plot: duration-amplitude scatter plot of all the events.
 
 <div style="text-align:center">
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/20um_multievent.png" alt="pore_stats plot" style="height: 200px;" align="middle"/>
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/filtered_psmix.png" alt="pore_stats plot" style="height: 200px;" align="middle"/>
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_7-29_15um-20um_8-2_scatter.png" alt="pore_stats plot" style="height: 200px;" align="middle"/>
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_peak-distributions_7-29_pr0006.png" alt="pore_stats plot" style="height: 200px;" align="middle"/>
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/event_durations.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/10-5-2016_10um_0_10000fps.png" alt="pore_stats plot" style="height: 200px;" align="middle"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/20um_multievent.png" alt="pore_stats plot" style="height: 250px;"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/filtered_psmix.png" alt="pore_stats plot" style="height: 250px;"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_7-29_15um-20um_8-2_scatter.png" alt="pore_stats plot" style="height: 250px;"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_peak-distributions_7-29_pr0006.png" alt="pore_stats plot" style="height: 250px;"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/event_durations.png" alt="pore_stats plot" style="height: 250px;" />
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/10-5-2016_10um_0_10000fps.png" alt="pore_stats plot" style="height: 250px;"/>
 </div>
 
 _Gallery_: Figures generated from the _pore stats_ library.
