@@ -24,7 +24,7 @@ _Image_: Resistive pulse event extraction program interface. Top plot: the total
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/20um_multievent.png" alt="pore_stats plot" style="height: 250px;"/>
-<img src="http://tphinkle.github.io/images/portfolio/pore_stats/filtered_psmix.png" alt="pore_stats plot" style="height: 250px;"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/15um-band_composites.png" alt="pore_stats plot" style="height: 250px;"/>
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_7-29_15um-20um_8-2_scatter.png" alt="pore_stats plot" style="height: 250px;"/>
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_peak-distributions_7-29_pr0006.png" alt="pore_stats plot" style="height: 250px;"/>
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/event_durations.png" alt="pore_stats plot" style="height: 250px;" />
