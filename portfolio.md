@@ -16,11 +16,28 @@ _Image:_ Program interface. The top plot is a measured device I-V curve; the bot
 
 ### [pore stats](https://github.com/tphinkle/pore_stats) <a name="pore_stats"></a>
 
-This was a collection of Python programs I wrote as part of a fellowship for creating an open-source data analysis package for [resistive pulse experiments](https://tphinkle.github.io/research/#resistive_pulse_sensing). The total package consists of a GUI program for detecting, validating, and saving resistive pulse events in time-series data, and a back-end library for analyzing the data.
+This was a collection of Python programs I wrote as part of a fellowship for creating an open-source data analysis package for [resistive pulse experiments](https://tphinkle.github.io/research/#resistive_pulse_sensing). The total package consists of a GUI program for detecting, validating, and saving resistive pulse events in time-series data, and a back-end library for analyzing the data. Because the experiment I'm running also implements a high-speed camera, the package includes some image analysis functions as well, including particle tracking, size measurement, and edge detection.
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/images/portfolio/pore_stats/full_view.png" alt="pore_stats view" style="width: 800px;" align="middle"/></div>
 
 _Image_: Resistive pulse event extraction program interface. Top plot: the total time-series; bottom-left plot: a single targeted event; bottom-right plot: duration-amplitude scatter plot of all the events.
+
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/20um_multievent.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/filtered_psmix.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_7-29_15um-20um_8-2_scatter.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_peak-distributions_7-29_pr0006.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/event_durations.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/10-5-2016_10um_0_10000fps.png" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+</div>
+
+_Gallery_: Figures generated from the _pore stats_ library.
+
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/oi_rp.gif" alt="pore_stats plot" style="height: 400px;" align="middle"/>
+</div>
+
+
 
 
 ### [cell controller](https://github.com/tphinkle/cell_controller) <a name="cell_controller"></a>
@@ -33,7 +50,7 @@ _Gif_: The application running. The left plot shows the ionic current; the right
 
 ### [spectranalyzer](https://github.com/tphinkle/spectranalyzer) <a name="spectranalyzer"></a>
 
-This was a quick program I wote in Python and PyQt to teach my niece about sound, frequencies, etc. The app takes in sound from a connected microphone and displays the waveform or the power spectrum (PSD) to the screen.
+This is a Python + PyQt app takes in sound from a connected microphone and displays the waveform or the power spectrum (PSD) to the screen. Convenient if you're interested in looking at the spectral composition of different sounds.
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
