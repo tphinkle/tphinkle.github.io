@@ -32,8 +32,9 @@ _Image_: Resistive pulse event extraction program interface. Top plot: the total
 </div>
 
 _Gallery_: Figures generated from the _pore stats_ library.
+
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F8pQMM3zGVQ?autoplay=1&loop=1&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=F8pQMM3zGVQ" frameborder="0" allowfullscreen></iframe>
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/oi_rp.gif" alt="pore_stats plot" style="width: 600 px;"/>
 </div>
 
 _Gif_: Simultaneous resistive pulse and optical tracking of a cancer cell passing through a microfluidic channel.
