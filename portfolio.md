@@ -37,6 +37,8 @@ _Gallery_: Figures generated from the _pore stats_ library.
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/oi_rp.gif" alt="pore_stats plot" style="height: 400px;" align="middle"/>
 </div>
 
+_Gif_: Simultaneous resistive pulse and optical tracking of a cancer cell passing through a microfluidic channel.
+
 
 
 
