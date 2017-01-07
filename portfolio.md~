@@ -34,12 +34,17 @@ _Image_: Resistive pulse event extraction program interface. Top plot: the total
 _Gallery_: Figures generated from the _pore stats_ library.
 
 <div style="text-align:center">
-<video autoplay="autoplay" loop="loop" width="400" src="https://github.com/tphinkle/tphinkle.github.io/blob/master/images/portfolio/pore_stats/HCT-116_pr0005_0000_22.mp4?raw=true" type="video/mp4" /></video>
+<video width="320" autoplay>
+<source src="https://github.com/tphinkle/tphinkle.github.io/blob/master/images/portfolio/pore_stats/HCT-116_pr0005_0000_22.mp4?raw=true" type="video/mp4"></video>
 </div>
 
 _Gif_: Simultaneous resistive pulse and optical tracking of a cancer cell passing through a microfluidic channel.
 
-
+<video width="320" height="240" autoplay>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
 
 
 ## [cell controller](https://github.com/tphinkle/cell_controller) <a name="cell_controller"></a>
