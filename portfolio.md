@@ -19,9 +19,12 @@ This is a GUI program written in C++ and Qt that enables remote control of a Kei
 
 This was a collection of Python programs I wrote as part of a fellowship for creating an open-source data analysis package for [resistive pulse experiments](https://tphinkle.github.io/research/#resistive_pulse_sensing). The total package consists of a GUI program for detecting, validating, and saving resistive pulse events in time-series data, and a back-end library for analyzing the data. Because the experiment I'm running also implements a high-speed camera, the package includes some image analysis functions as well, including particle tracking, size measurement, and edge detection.
 
-<div style="text-align:center"><img src="http://tphinkle.github.io/images/portfolio/pore_stats/full_view.png" alt="pore_stats view" style="width: 800px;" align="middle"/></div>
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/images/portfolio/pore_stats/full_view.png" alt="pore_stats view" style="width: 800px;" align="middle"/>
+<figcaption><em>Image:</em> Resistive pulse event extraction program interface. Top plot: the total time-series; bottom-left plot: a single targeted event; bottom-right plot: duration-amplitude scatter plot of all the events.</figcaption>
+</div>
 
-_Image_: Resistive pulse event extraction program interface. Top plot: the total time-series; bottom-left plot: a single targeted event; bottom-right plot: duration-amplitude scatter plot of all the events.
+
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/20um_multievent_small.png" alt="pore_stats plot" style="height: 250px;"/>
@@ -30,23 +33,27 @@ _Image_: Resistive pulse event extraction program interface. Top plot: the total
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_peak-distributions_7-29_pr0006_small.png" alt="pore_stats plot" style="height: 250px;"/>
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/event_durations.png" alt="pore_stats plot" style="height: 250px;" />
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/10-5-2016_10um_0_10000fps_small.png" alt="pore_stats plot" style="height: 250px;"/>
+<figcaption><em>Gallery:</em> Figures generated from the _pore stats_ library.</figcaption>
 </div>
 
-_Gallery_: Figures generated from the _pore stats_ library.
+
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/oi_rp.gif" alt="pore_stats plot" style="width: 600 px;"/>
+<figcaption><em>Gif:</em> Simultaneous resistive pulse and optical tracking of a cancer cell passing through a microfluidic channel.
+</figcaption>
 </div>
 
-_Gif_: Simultaneous resistive pulse and optical tracking of a cancer cell passing through a microfluidic channel.
+
 
 ## [cell controller](https://github.com/tphinkle/cell_controller) <a name="cell_controller"></a>
 
 I wrote this program to control a few measurement instruments I use for my cancer cell experiments. The program is written in C++ and Qt, and uses multi-threading to control a [high-speed camera](http://www.phantomhighspeed.com/Home/gclid/CjwKEAiAkajDBRCRq8Czmdj-yFgSJADikZggiwmCFoUakGlh04kgyB43FtlUQCRi1ahD8Q_LpKD7WxoCblnw_wcB), [data acquisition card](http://www.ni.com/data-acquisition/), and a syringe pump.
 
-<div style="text-align:center"><img src="http://tphinkle.github.io/images/portfolio/cell_controller/demo_0.gif" alt="cell_controller gif" style="width: 800px;" align="middle"/></div>
-
-_Gif_: The application running. The left plot shows the ionic current; the right plot is grabbed from a high-speed camera.
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/images/portfolio/cell_controller/demo_0.gif" alt="cell_controller gif" style="width: 800px;" align="middle"/>
+<figcaption><em>Gif:</em> The application running. The left plot shows the ionic current; the right plot is grabbed from a high-speed camera.</figcaption>
+</div>
 
 ## [spectranalyzer](https://github.com/tphinkle/spectranalyzer) <a name="spectranalyzer"></a>
 
@@ -55,9 +62,8 @@ This is a Python + PyQt app takes in sound from a connected microphone and displ
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
 <img src="http://tphinkle.github.io/images/portfolio/spectranalyzer/spectranalyzer_fft.png" alt="spectranalyzer" style="width: 480px;" align="middle"/>
+<figcaption><em>Images:</em> Microphone input signal(left), input PSD (right)</figcaption>
 </div>
-
-_Images:_ Microphone input signal (left), input PSD (right)
 
 
 
