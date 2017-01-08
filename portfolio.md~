@@ -10,9 +10,9 @@ I've written a few different pieces of software over the past two years for rese
 
 This is a GUI program written in C++ and Qt that enables remote control of a Keithley picoammeter. Two specific measurement protocols, IV curve and time-series measurement, are set-up and available simultaneously. The program displays the data in real-time and can be used to save the data. A separate script written in Python can be used to create a formatted Excel document from the acquired data. This was written to make my lab's IV curve measurements more efficient and to provide real-time feedback on the noise characteristics of the systems we measure.
 
-<div style="text-align:center">
+<div style="text-align:center; width: 800px;">
 <img src="http://tphinkle.github.io/images/portfolio/nanoIV/nanoIV_pic.png" alt="nanoIV pic" style="width: 800px;" align="middle"/>
-<p style="width: 800px; text-align:center" align="middle"/>
+
 <em>Image:</em> Program interface. The top plot is a measured device I-V curve; the bottom plot is a time-series of current measurements.
 </p>
 </div>
