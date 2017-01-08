@@ -15,8 +15,6 @@ This is a GUI program written in C++ and Qt that enables remote control of a Kei
 <figcaption><em>Image:</em> Program interface. The top plot is a measured device I-V curve; the bottom plot is a time-series of current measurements.</figcaption>
 </div>
 <br>
-<br>
-<br>
 
 ## [pore stats](https://github.com/tphinkle/pore_stats) <a name="pore_stats"></a>
 
@@ -27,8 +25,7 @@ This was a collection of Python programs I wrote as part of a fellowship for cre
 <figcaption><em>Image:</em> Resistive pulse event extraction program interface. Top plot: the total time-series; bottom-left plot: a single targeted event; bottom-right plot: duration-amplitude scatter plot of all the events.</figcaption>
 </div>
 <br>
-<br>
-<br>
+
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/20um_multievent_small.png" alt="pore_stats plot" style="height: 250px;"/>
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/15um-band_composites.png" alt="pore_stats plot" style="height: 250px;"/>
@@ -39,8 +36,7 @@ This was a collection of Python programs I wrote as part of a fellowship for cre
 <figcaption><em>Gallery:</em> Figures generated from the <em>pore</em> stats_ library.</figcaption>
 </div>
 <br>
-<br>
-<br>
+
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/oi_rp.gif" alt="pore_stats plot" style="width: 600 px;"/>
 <figcaption><em>Gif:</em> Simultaneous resistive pulse and optical tracking of a cancer cell passing through a microfluidic channel.
@@ -59,8 +55,6 @@ I wrote this program to control a few measurement instruments I use for my cance
 <img src="http://tphinkle.github.io/images/portfolio/cell_controller/demo_0.gif" alt="cell_controller gif" style="width: 800px;" align="middle"/>
 <figcaption><em>Gif:</em> The application running. The left plot shows the ionic current; the right plot is grabbed from a high-speed camera.</figcaption>
 </div>
-<br>
-<br>
 <br>
 
 
