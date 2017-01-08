@@ -12,7 +12,9 @@ This is a GUI program written in C++ and Qt that enables remote control of a Kei
 
 <div style="text-align:center"><img src="http://tphinkle.github.io/images/portfolio/nanoIV/nanoIV_pic.png" alt="nanoIV pic" style="width: 800px;" align="middle"/></div>
 
+<div style="width: 800px;>
 _Image:_ Program interface. The top plot is a measured device I-V curve; the bottom plot is a time-series of current measurements.
+</div>
 
 ## [pore stats](https://github.com/tphinkle/pore_stats) <a name="pore_stats"></a>
 
