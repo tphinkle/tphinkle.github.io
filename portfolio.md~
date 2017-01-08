@@ -12,7 +12,6 @@ This is a GUI program written in C++ and Qt that enables remote control of a Kei
 
 <div style="text-align:center; width: 800px;">
 <img src="http://tphinkle.github.io/images/portfolio/nanoIV/nanoIV_pic.png" alt="nanoIV pic" style="width: 800px;" align="middle"/>
-
 <em>Image:</em> Program interface. The top plot is a measured device I-V curve; the bottom plot is a time-series of current measurements.
 </p>
 </div>
