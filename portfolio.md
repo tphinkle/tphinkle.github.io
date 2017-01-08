@@ -33,7 +33,7 @@ This was a collection of Python programs I wrote as part of a fellowship for cre
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/HCT-116_peak-distributions_7-29_pr0006_small.png" alt="pore_stats plot" style="height: 250px;"/>
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/event_durations.png" alt="pore_stats plot" style="height: 250px;" />
 <img src="http://tphinkle.github.io/images/portfolio/pore_stats/10-5-2016_10um_0_10000fps_small.png" alt="pore_stats plot" style="height: 250px;"/>
-<figcaption><em>Gallery:</em> Figures generated from the _pore stats_ library.</figcaption>
+<figcaption><em>Gallery:</em> Figures generated from the <em>pore</em> stats_ library.</figcaption>
 </div>
 
 
@@ -50,10 +50,14 @@ This was a collection of Python programs I wrote as part of a fellowship for cre
 
 I wrote this program to control a few measurement instruments I use for my cancer cell experiments. The program is written in C++ and Qt, and uses multi-threading to control a [high-speed camera](http://www.phantomhighspeed.com/Home/gclid/CjwKEAiAkajDBRCRq8Czmdj-yFgSJADikZggiwmCFoUakGlh04kgyB43FtlUQCRi1ahD8Q_LpKD7WxoCblnw_wcB), [data acquisition card](http://www.ni.com/data-acquisition/), and a syringe pump.
 
+
+
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/cell_controller/demo_0.gif" alt="cell_controller gif" style="width: 800px;" align="middle"/>
 <figcaption><em>Gif:</em> The application running. The left plot shows the ionic current; the right plot is grabbed from a high-speed camera.</figcaption>
 </div>
+
+
 
 ## [spectranalyzer](https://github.com/tphinkle/spectranalyzer) <a name="spectranalyzer"></a>
 
