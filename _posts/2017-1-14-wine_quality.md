@@ -14,7 +14,7 @@ Source: http://archive.ics.uci.edu/ml/datasets/Wine+Quality
 
 
 
-<iframe src="https://player.vimeo.com/video/194119692?portrait=0" width="500"</iframe>
+<iframe src="https://player.vimeo.com/video/194119692?portrait=0" width="500"></iframe>
 
 
 
