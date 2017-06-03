@@ -53,7 +53,7 @@ I wrote this program to control a few measurement instruments I use for my cance
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/cell_controller/demo_0.gif" alt="cell_controller gif" style="width: 800px;" align="middle"/>
-<figcaption><em>Gif:</em> The application running. The left plot shows the ionic current; the video on the right is grabbed from a high-speed camera. The beads featured in the right hand side are approximately $5 \mu$ m in size---thirty times less thick than a human hair!</figcaption>
+<figcaption><em>Gif:</em> The application running. The left plot shows the ionic current; the video on the right is grabbed from a high-speed camera. The beads featured in the right hand side are approximately five microns in size---thirty times less thick than a human hair!</figcaption>
 </div>
 <br>
 
