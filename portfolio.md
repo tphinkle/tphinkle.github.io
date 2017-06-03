@@ -57,7 +57,16 @@ I wrote this program to control a few measurement instruments I use for my cance
 </div>
 <br>
 
+## [Arctic sea-ice visualization GUI tool](https://github.com/tphinkle/sea_ice)
 
+This program was developed in under 24 hours as my team's entry for the 2017 UCI Data Science Initiative hackathon, and we were awarded as one of the winning groups! The application allows users to dynamically visualize sea ice concentrations in the Arctic from the 1800s to the present day. It is written in Python and PyQt. Here's my group's abstract:
+
+> The NSIDC Reconstruction of Arctic sea ice is a massive data set of sea ice concentration measurements taken from 1850 to 2014. The data set consists of monthly sea ice measurements taken at regularly spaced longitude-latitude coordinates centered on the North Pole, and is compiled from a wide variety of sources, from shipping reports to satellite microwave data. The data is useful because it allows researchers to study both the seasonal variation and long term trends in sea ice over the entire Arctic or in specific regions. However, due to the large size of the data set and the wide range of times and locations it covers, visualizing it can be difficult. In order to address this problem, we developed a graphical user interface (GUI) program written in Python and PyQt that enables dynamic and interactive visualization of the NSIDC data set. The program allows the user to quickly load and view a given month of measurements from the data set, and pan and zoom to focus on specific regions. Additionally, the user can select regions of interest to view a time-series of the average ice concentration local to that region at its annual high and low points. The program could be deployed as an educational outreach tool that allows users to discover for themselves how the Arctic's sea ice is changing. The program could also be used by researchers to rapidly discover trends in Arctic sea ice that warrant a more in-depth study.
+
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/images/portfolio/seaice/seaice_pic.png" alt="sea_ice" style="width: 480px;" align="middle"/>
+<figcaption><em>Image:</em> Picture of the GUI developed to visualize the Arctic sea ice data.</figcaption>
+</div>
 
 ## [spectranalyzer](https://github.com/tphinkle/spectranalyzer) <a name="spectranalyzer"></a>
 
