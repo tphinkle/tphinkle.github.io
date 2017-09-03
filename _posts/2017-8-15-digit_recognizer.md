@@ -13,7 +13,7 @@ I'll include the code, but here's the gist of it; it's really not all that compl
 3. Put the digits through a sufficiently general image processing pipeline that makes our digits more closely resemble digits from the MNIST set
 4. Use our trained model to make predictions on the hand-written digits
 
-##### 0. The data set
+### 0. The data set
 
 Here's a picture of the raw image I'll be using. It's not a particular good picture, I quickly wrote down some digits using a marker I had lying around on a white sheet of paper, and snapped a quick overhead shot of the paper with my camera.
 
@@ -25,23 +25,42 @@ Here are two examples of single digits, on the left from the MNIST set and on th
 <img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/hw_0.png" alt="Hand-written zero" style="width:300px;" align="middle">
 
 
-##### 1. Model training
+### 1. Model training
 
 Those that have used sklearn before will be familiar with this part. For those that aren't, training a model is as simple as creating a blank model `model` object, and then fitting the model to the training data using `model.fit(data)`.
 
 Here's the code snippet to load in the entire MNIST data set and train it using a logistic regression model. I set `C=1e10` as an optional argument in the logistic regression constructor so that the model would be unregularized (perhaps a topic for another blog post).
 
-##### 2. Generating and loading hand-written digits
 
-For this part, I drew a random collection of digits using a pen on a clean sheet of white paper, snapped a photo with my cell phone's camera, and e-mailed myself the pictures. Easy peasy.
 
-Here's the image that we'll be working with. The goal is to detect all of these digits.
+### 3. Image processing
 
-##### 3. Image preprocessing
+Now that we've seen what the raw image we're working with looks like, it's clear we'll have to process it in some way so that it more closely resembles the MNIST data. At the very least, we'll have to rescale it to the size of the MNIST digits since the model will expect that many features. The image processing will be conducted in a number of steps, and at each step I'll show a picture of the transformed image, a histogram of the pixel intensity in the transformed image, show a snippet of code containing the Python function used to perform that processing step, and finally explain my reasoning behind why that step was taken.
 
-This is undeniably the most difficult and time-consuming part of the entire pipeline (although it isn't so bad with all of the convenient image processing functoins available in Python's scientific computing modules). This is actually a common thread that runs through a lot of machine learning problems: training and fitting models is seldom the most time-consuming and critical part of the entire analysis pipeline, even if it gets most of the attention. We'll start with the raw image shown above and I'll go through the preprocessing steps one-by-one, explaining each step and justifying my reasoning for why that step was performed.
+##### i. The raw image
 
-##### 4. Testing the model!
+<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_i.png" alt="Hand-written zero" style="width:300px;" align="middle">
+
+Couple things to point out. First, for whatever reason by default the image is rotated when loaded in via `numpy`. Second, while the image is actually RGB colored, you can see that it's primarily black and white. The histogram doesn't give us a ton of info here across the different color channels, aside from telling us that it's approximately 50-50 black/white. Interestingly, the most prominent picture in the image is *green*, whereas one would expect it to be red and blue due to the purple represented in the digits.
+
+To load the image, I snapped the .jpg picture, downloaded it on my computer, and used a convenient function contained in the `matplotlib.pyplot` module:
+
+```
+import matplotlib.pyplot as plt
+raw_image_file_path = './custom_digits.jpg`
+raw_image = plt.imread(raw_image_file_path)
+```
+
+##### ii. Black-white conversion
+
+<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_ii.png" alt="Hand-written zero" style="width:300px;" align="middle">
+
+
+
+
+
+
+### 4. Testing the model!
 
 Now that we've trained our model and preprocessed hte images, let's feed them into our model!
 
