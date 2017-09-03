@@ -2,7 +2,7 @@
 
 One of the first applications a novice machine learning student will encounter is the digit recognizer. It's a really cool application, and a good demonstration of how machine learning can have real world applications. I think the visual aspect really strikes a chord with people too; a lot of machine learning examples are about making abstract predictions that have little tangible meaning, but in this case the results are clearly visible. However cool the digit recognizer example is, one thing that could be improved is showing its real world implications. In the digit recognizer problem we build a model that *can* detect hand-written digits, but this idea is never realized with actual hand-written digits. Here's an example of a digit from the MNIST data set plotted as a grayscale matrix. For this particular data set, digits are represented as 28x28 single-byte grayscale values. The trouble is that they don't really resemble hand-written digits. Is there a way that we can use the models trained on MNIST data to accurately predict hand-written digits? It turns out that there is, and with only a little bit of image processing we can create a program that will detect our own hand-written digits, accurately and consistently.
 
-
+<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/custom_digits_2.jpg" alt="Hand-written digits" style="width:800px;">
 
 I'll include the code, but here's the gist of it; it's really not all that complicated:
 
