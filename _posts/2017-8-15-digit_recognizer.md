@@ -21,7 +21,7 @@ Here's a picture of the raw image I'll be using. It's not a particular good pict
 
 Here are two examples of single digits, on the left from the MNIST set and on the right, one of the zoomed in digits from the above picture. The goal is to make use of the thousands of the digits in the MNIST set to train a model to predict digits that start off looking like the hand-written digit on the right.
 
-<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/MNIST_0.png" alt="MNIST zero" style="width:300px;" align="middle">
+<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/mnist_0.png" alt="MNIST zero" style="width:300px;" align="middle">
 <img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/hw_0.png" alt="Hand-written zero" style="width:300px;" align="middle">
 
 
@@ -53,7 +53,9 @@ raw_image = plt.imread(raw_image_file_path)
 
 ##### ii. Black-white conversion
 
-<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_ii.png" alt="Hand-written zero" style="width:300px;" align="middle">
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_ii.png)
+
+<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_ii.png" alt="Hand-written zero" style="width:800px;" align="middle">
 
 
 
