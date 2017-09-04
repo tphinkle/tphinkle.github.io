@@ -39,11 +39,11 @@ Now that we've seen what the raw image we're working with looks like, it's clear
 
 ##### i. The raw image
 
-<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_i.png" alt="Hand-written zero" style="width:300px;" align="middle">
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_i.png)
 
 Couple things to point out. First, for whatever reason by default the image is rotated when loaded in via `numpy`. Second, while the image is actually RGB colored, you can see that it's primarily black and white. The histogram doesn't give us a ton of info here across the different color channels, aside from telling us that it's approximately 50-50 black/white. Interestingly, the most prominent picture in the image is *green*, whereas one would expect it to be red and blue due to the purple represented in the digits.
 
-To load the image, I snapped the .jpg picture, downloaded it on my computer, and used a convenient function contained in the `matplotlib.pyplot` module:
+To load the image, I snapped the .jpg picture, downloaded it on my computer, and used a convenient function contained in the `matplotlib.pyplot` module. This loads the image in as a `numpy` array.
 
 ```
 import matplotlib.pyplot as plt
@@ -51,16 +51,115 @@ raw_image_file_path = './custom_digits.jpg`
 raw_image = plt.imread(raw_image_file_path)
 ```
 
-##### ii. Black-white conversion
+##### ii. Convert to grayscale
 
 ![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_ii.png)
 
-<img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_ii.png" alt="Hand-written zero" style="width:800px;" align="middle">
+
+This is a simple grayscale conversion created by averaging the intensity across RGB channels, necessary since the MNIST set is grayscale valued. We use the `np.mean()` function to do this.
+
+```
+import numpy as np
+processed_image = np.mean(raw_image, axis=2)
+```
+
+##### iii. Rotation
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_iii.png)
+
+Since the camera was loaded in turned at an angle, we have to rotate it by $90^{\circ}$. I didn't take the image with much care, so we can see that the picture itself isn't even aligned with the $x,y$ axes of the figure. In principle I could perform an additional rotation so the digits are perfectly vertically and horizontally aligned, but I think this should do a good enough job for now.
+
+```
+processed_image = np.rot90(processed_image, k=-1)
+```
+
+##### iv. Crop out the background
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_iv.png)
+
+Next we have to get rid of all that background. This could be done in an eloquent way, but for now I'm achieving the cropping step by manually slicing the `numpy` array.
+
+```
+x0 = 100
+x1 = 2180
+y0 = 850
+y1 = 3510
+processed_image = processed_image[y0:y1,x0:x1]
+```
+
+##### v. Invert the grayscale values
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_v.png)
+
+As we can see, in the MNIST set the digits themselves are whitish colors, while the background is pitch black. To adapt our image to this representation, we simply invert the grayscale values. This is easily achieved in `numpy`.
+
+```
+processed_image = 255 - processed_image
+```
+
+##### vi. Threshold the grayscale values
 
 
 
+After inversion we're starting to get an image that more closely resembles the MNIST set, but we can see that the background in the inverted image isn't perfectly black. In order to make it so, we need to threshold the pixel intensities, basically by setting all pixels with intensity below the threshold value equal to zero (perfectly black). But, how do we choose the threshold? This is probably the first instance where the histogram is actually useful beyond just being informative. We can see two subpopulations in the histogram, a huge clustering of pixels at low intensity that corresponds to the background, and a much smaller sub population at higher intensities that corresponds to the letters. The goal is to move that entire mass of dark pixels to zero intensity. There are ways of being more exact about this, but I'm just going to do it by eyeballing the histogram in the previous step and setting the threshold based off of the gap between the populations of dark and light pixels. In this case, I went with 120.
 
 
+
+Here's the code. Notice how easy this operation is in `numpy`.
+
+```
+threshold = 120
+processed_image[processed_image < threshold] = 0.
+```
+
+Note: In the following histogram I neglect to include black pixels from now on, since they dominate the pixel intensities at this point and make it difficult to see the high-intensity pixel bins.
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_vi.png)
+
+##### vii. Isolate the digits
+
+So far the image processing steps have taken us to a point where the individual digits begin to look more and more like the MNIST digits, but we still need to isolate individuals. How do we do this? The method I use is a variation of the [flood fill algorithm](https://en.wikipedia.org/wiki/Flood_fill). You know that paint bucket tool that's in virtually every image manipulation software program? That thing uses flood fill. Basically, we are looking for non-black pixels, and every time two of these pixels touch sides, we group them together. We recursively add neighboring pixels into the cluster, until eventually we've scanned over the entire image. After flood fill, we have a list of clusters, where each cluster itself is a list of the indices of the pixels that belong to that cluster. Then, for each cluster I create a new numpy array for that cluster. All of the pixels in this array are black, except for the pixels that were included in that particular cluster which retain their intensity value.
+
+To show how this works, I'm including a transformed version of the original image where cluster is assigned a random color. This demonstrates how neighboring pixels are indeed clustered correctly.
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_color.png)
+
+The picture above shows the clusters were properly detected, and the following image shows the transformation that is performed on each cluster.
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/single_digit.png)
+
+Now we're at the single digit level, and for the rest of the tutorial we'll be performing transformations on the individual images instead of the entire bulk image as we have up to this point.
+
+As for the coding part, I'm 99% sure that somewhere out there in Python's scientific computing space there's a single-call flood fill function, but I've yet to find it. It's probably in `numpy`, `scipy`, `opencv2`, or maybe even in `matplotlib`. A uick google search didn't find it for me, and I thought it would be a good exercise to implement it myself. It's not so tricky, but it's a recursive algorithm so you have to be a little careful to avoid having your code blow up ;) 
+
+```
+
+
+# List of clusters
+# Each cluster is a list of pixel indices that belongs to that cluster
+clusters = FloodFill(processed_image)
+
+# Turn the clusters of pixels into single digit images
+digits = []
+for cluster in clusters:
+
+    # Create an empty numpy array that is as tall and wide as
+    # the span of the pixels in this particular cluster
+    digit = np.empty((np.max(cluster[:,0]), np.max(cluster[:,1])))
+
+   
+
+    # Set the intensity value of the pixels in the digit
+    # to the intensity value of the pixels in the cluster.
+    
+    row_offset = np.min(cluster[:,0])
+    column_offset = np.min(cluster[:,1])
+
+    for pixel in cluster:
+        digit[pixel[0] - row_offset, pixel[1] - column_offset] = processed_image[pixel[0], pixel[1]]
+    
+    digits.append(digit)
+```
 
 ### 4. Testing the model!
 
