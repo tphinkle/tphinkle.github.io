@@ -124,17 +124,15 @@ To show how this works, I'm including a transformed version of the original imag
 
 ![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_color.png)
 
-The picture above shows the clusters were properly detected, and the following image shows the transformation that is performed on each cluster.
+The picture above indicates that the clusters were properly detected, and the following image shows the transformation that is performed on each cluster.
 
 ![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/single_digit.png)
 
 Now we're at the single digit level, and for the rest of the tutorial we'll be performing transformations on the individual images instead of the entire bulk image as we have up to this point.
 
-As for the coding part, I'm 99% sure that somewhere out there in Python's scientific computing space there's a single-call flood fill function, but I've yet to find it. It's probably in `numpy`, `scipy`, `opencv2`, or maybe even in `matplotlib`. A uick google search didn't find it for me, and I thought it would be a good exercise to implement it myself. It's not so tricky, but it's a recursive algorithm so you have to be a little careful to avoid having your code blow up ;) 
+As for the coding part, I'm 99% sure that somewhere out there in Python's scientific computing space there's a single-call flood fill function, but I've yet to find it. It's probably in `numpy`, `scipy`, `opencv2`, or maybe even in `matplotlib`. A quick google search didn't find it for me, so I just decided to implement it myself. It's not so tricky, but it's a recursive algorithm so you have to be a little careful to avoid having your code blow up ;) 
 
 ```
-
-
 # List of clusters
 # Each cluster is a list of pixel indices that belongs to that cluster
 clusters = FloodFill(processed_image)
@@ -160,6 +158,25 @@ for cluster in clusters:
     
     digits.append(digit)
 ```
+
+##### viii. Threshold digits based on pixel count
+
+This step could have been performed in the previous step, but I decided to break it up. The general image processing pipeline we've gone through so far generally works, but on occasion you'll have errant small clusters that get picked up and recognized as digits. In this case, I had commas and periods on the page that have been put into clusters that I don't want to make predictions on. This filtering step may be complex depending on the 'noise', or undesired objects, in your own personal images. In this case, we filter out the undesired characters by simply applying a filter on the minimum number of pixels that a digit must have.
+
+How do we choose the threshold? One easy way is to plot a histogram of the pixel counts of all the digits. There should be a large population with lots of pixels---those are the digits. On the other hand, 
+
+
+##### viii. Pad the digits
+
+Next, we see that the light pixels run all the way up to the border of the image, whereas in the MNIST set this never happens; usually there's a border of a few black pixels at least surrounding every image. What we have to do is 'pad' our digits, basically adding some amount of black space around them. Now, the * amount * of padding matters. I inserted random pads until I found something that qualitatively matched the appearance of the MNIST digits.
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_viii.png)
+
+Now for the code... Guess what? There's a `numpy` function that will do this for us in a single line of code! Who would have thought? Simply amazing. Anyways, here's the code!
+
+
+
+
 
 ### 4. Testing the model!
 
