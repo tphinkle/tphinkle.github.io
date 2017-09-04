@@ -25,15 +25,9 @@ Here are two examples of single digits, on the left from the MNIST set and on th
 <img src="https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/hw_0.png" alt="Hand-written zero" style="width:300px;" align="middle">
 
 
-### 1. Model training
-
-Those that have used sklearn before will be familiar with this part. For those that aren't, training a model is as simple as creating a blank model `model` object, and then fitting the model to the training data using `model.fit(data)`.
-
-Here's the code snippet to load in the entire MNIST data set and train it using a logistic regression model. I set `C=1e10` as an optional argument in the logistic regression constructor so that the model would be unregularized (perhaps a topic for another blog post).
 
 
-
-### 3. Image processing
+### 1. Image processing
 
 Now that we've seen what the raw image we're working with looks like, it's clear we'll have to process it in some way so that it more closely resembles the MNIST data. At the very least, we'll have to rescale it to the size of the MNIST digits since the model will expect that many features. The image processing will be conducted in a number of steps, and at each step I'll show a picture of the transformed image, a histogram of the pixel intensity in the transformed image, show a snippet of code containing the Python function used to perform that processing step, and finally explain my reasoning behind why that step was taken.
 
@@ -128,7 +122,7 @@ The picture above indicates that the clusters were properly detected, and the fo
 
 ![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/single_digit.png)
 
-Now we're at the single digit level, and for the rest of the tutorial we'll be performing transformations on the individual images instead of the entire bulk image as we have up to this point.
+Now we're at the single digit level, and for the rest of the tutorial we'll be performing transformations on the individual digits instead of the entire bulk image as we have up to this point.
 
 As for the coding part, I'm 99% sure that somewhere out there in Python's scientific computing space there's a single-call flood fill function, but I've yet to find it. It's probably in `numpy`, `scipy`, `opencv2`, or maybe even in `matplotlib`. A quick google search didn't find it for me, so I just decided to implement it myself. It's not so tricky, but it's a recursive algorithm so you have to be a little careful to avoid having your code blow up ;) 
 
@@ -161,21 +155,56 @@ for cluster in clusters:
 
 ##### viii. Threshold digits based on pixel count
 
-This step could have been performed in the previous step, but I decided to break it up. The general image processing pipeline we've gone through so far generally works, but on occasion you'll have errant small clusters that get picked up and recognized as digits. In this case, I had commas and periods on the page that have been put into clusters that I don't want to make predictions on. This filtering step may be complex depending on the 'noise', or undesired objects, in your own personal images. In this case, we filter out the undesired characters by simply applying a filter on the minimum number of pixels that a digit must have.
+The general image processing pipeline we've gone through so far generally works, but on occasion you'll have errant small clusters that get picked up and recognized as digits. In this case, I had commas and periods on the page that have been put into clusters that I don't want to make predictions on, but you could also have small stray marks on the page or noisey pixels left over as an artifact from one of the previous processing steps. This filtering step may be complex depending on the 'noise', or undesired objects, in your own personal images. In this case, we filter out the undesired characters by simply applying a filter on the minimum number of pixels that a digit must have, since we know the commas and periods are smaller than the digits we're interested in.
 
-How do we choose the threshold? One easy way is to plot a histogram of the pixel counts of all the digits. There should be a large population with lots of pixels---those are the digits. On the other hand, 
+How do we choose the threshold value? One easy way is to plot a histogram of the pixel counts of all the digits. There should be a small subpopulation of digits with lower pixel values than others. In my case, 
 
+Here's what the histogram looks like.
 
-##### viii. Pad the digits
-
-Next, we see that the light pixels run all the way up to the border of the image, whereas in the MNIST set this never happens; usually there's a border of a few black pixels at least surrounding every image. What we have to do is 'pad' our digits, basically adding some amount of black space around them. Now, the * amount * of padding matters. I inserted random pads until I found something that qualitatively matched the appearance of the MNIST digits.
-
-![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digits_viii.png)
-
-Now for the code... Guess what? There's a `numpy` function that will do this for us in a single line of code! Who would have thought? Simply amazing. Anyways, here's the code!
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/digit_size_hist.png)
 
 
 
+##### ix. Pad the digits
+
+Next, we see that the light pixels run all the way up to the border of the image, whereas in the MNIST set this never happens; usually there's a border of a few black pixels surrounding every image. What we have to do is 'pad' our digits, basically adding some amount of black space around them. Now, the * amount * of padding matters. I inserted random pads until I found something that qualitatively matched the appearance of the MNIST digits.
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/padded_digit.png)
+
+Now for the code... Guess what? There's a `numpy` function that will do the for us in a single line of code! Who would have thought? Simply amazing. All we have to do is specify the number of pixels we wish to pad with, which I choose based on a percentage of the total height of the digit. This same padding is applied at all sides on the entire image.
+
+
+```
+def PadDigit(digit, pad_percentage):
+    digit_height = digit.shape[0]
+    pad_size = int(digit_height * pad_percentage)
+    processed_digit = np.pad(digit, pad_size, 'constant')
+    return processed_digit
+```
+
+##### x. Resize the image
+
+Last image processing step! We have to ensure that our images have the same number of features as the MNIST set which we'll be training on. How do we go about resizing the image? One way we could do it is via some 2D interpolative method, where we generate 28x28 pixels based on the expected value at that point. Or, we could do something like a 2D averaging kernel. Fortunately, `numpy` again saves this trouble by providing the `numpy.resize()` function.
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/final_digit.png)
+
+We can actually train now because our input is the correct size. Notice that using the `numpy.resize()` function provided an additional benefit by increasing the granularity of the digit, making it more closely resemble the digits from the MNIST set. 
+
+
+### 2. Reviewing the processed images
+
+Below I have a random sampling of images taken from the custom digits after processing and from the MNIST set. Now, clearly the MNIST set was written with a pen instead of a marker. Our digits are a little fatter. However, other than that they're pretty darn similar. Let's see how it works out!
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/custom_mosaic.pngpng)
+
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/mnist_mosaic.png)
+
+
+### 1. Model training
+
+Those that have used sklearn before will be familiar with this part. For those that aren't, training a model is as simple as creating a blank model `model` object, and then fitting the model to the training data using `model.fit(data)`.
+
+Here's the code snippet to load in the entire MNIST data set and train it using a logistic regression model. I set `C=1e10` as an optional argument in the logistic regression constructor so that the model would be unregularized (perhaps a topic for another blog post).
 
 
 ### 4. Testing the model!
