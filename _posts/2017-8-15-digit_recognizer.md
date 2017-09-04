@@ -195,7 +195,7 @@ We can actually train now because our input is the correct size. Notice that usi
 
 Below I have a random sampling of images taken from the custom digits after processing and from the MNIST set. Now, clearly the MNIST set was written with a pen instead of a marker. Our digits are a little fatter. However, other than that they're pretty darn similar. Let's see how it works out!
 
-![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/custom_mosaic.pngpng)
+![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/custom_mosaic.png)
 
 ![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/mnist_mosaic.png)
 
