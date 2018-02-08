@@ -4,7 +4,22 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-I've written a few different pieces of software over the past two years for research and various other miscellaneous purposes. Here's a quick summary of some of the projects that I've completed.
+This is a list of some of the coding projects I've worked on, a mix of data science projects and code written for my PhD research.
+
+## [shelfie](https://github.com/tphinkle/shelfie) <a name="shelfie"></a>
+
+Shelfie is an interactive web app that automatically catalogues and prices books found in user-submitted images of bookshelves. The idea was to help people that want to quickly determine whether their used book collection is worth selling in a hassle-free manner.
+
+I built shelfie in early 2018 in a little over 3 weeks during my time as a fellow at [Insight data science](https://insightdatascience.com). The whole thing is built in Python (with just a bit of SQL), and the web app was made with the Flask framework. It uses machine learning, image processing techniques, and natural language processing for its algorithms.
+
+<div style="text-align:center">
+<img src="http://tphinkle.github.io/images/portfolio/shelfie/annotated_segmented.png" alt$
+<figcaption><em>Image:</em> Program interface. The top plot is a measured devic$
+</div>
+<br>
+
+
+Additional information can be found on the [project repository](https://github.com/tphinkle/shelfie) on github.
 
 ## [nanoIV](https://github.com/tphinkle/nanoIV) <a name="nanoIV"></a>
 
