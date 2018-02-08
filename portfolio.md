@@ -10,11 +10,13 @@ This is a list of some of the coding projects I've worked on, a mix of data scie
 
 Shelfie is an interactive web app that automatically catalogues and prices books found in user-submitted images of bookshelves. The idea was to help people that want to quickly determine whether their used book collection is worth selling in a hassle-free manner.
 
+You can try it out here: [shelfie.site](http://shelfie.site).
+
 I built shelfie in early 2018 in a little over 3 weeks during my time as a fellow at [Insight data science](https://insightdatascience.com). The whole thing is built in Python (with just a bit of SQL), and the web app was made with the Flask framework. It uses machine learning, image processing techniques, and natural language processing for its algorithms.
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/images/portfolio/shelfie/annotated_segmented.png" alt="shelfie">
-<figcaption><em>Image:</em> Detection of the text on a book spine using _shelfie_.</figcaption>
+<figcaption><em>Image:</em> Detection of the text on a book spine using shelfie.</figcaption>
 </div>
 <br>
 
