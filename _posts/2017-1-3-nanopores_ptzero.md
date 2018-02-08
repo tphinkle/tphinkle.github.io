@@ -25,7 +25,7 @@ Notice that at around 100 nm the fraction of the ion solution within the EDL bec
 
 #### Derivation
 
-We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential). 
+We can understand the formation of the electrical double layer as a competition between diffusion (chemical potential) and electrostatic forces (electric potential).
 
 Consider an infinite planar surface with constant surface charge $$\sigma$$, and a solution composed of water and two types of oppositely charged ions with the same valency $$z$$ dissolved in the solution with bulk number density $$C_{0}$$. We seek to find the number density of each ion species $$C^{+}$$ and $$C^{-}$$ in the solution. The relevant equations here are [Poisson's equation](https://en.wikipedia.org/wiki/Poisson's_equation), which relates the electrostatic potential to the charge distribution, and the [Boltzmann distribution](https://en.wikipedia.org/wiki/Boltzmann_distribution), which yields the probability distribution for particles to occupy an energy range.
 
@@ -89,7 +89,7 @@ Plugging the solution for the electrostatic potential back into the Boltzmann eq
 
 Interestingly, the relationship isn't perfectly linear as one might naively think. Without the ions (i.e. just a charged plate), the surface potential is directly proportional to the surface charge. Notice that the surface potential is higher when the solution is more dilute; this makes sense, because the same charge is screened over a greater distance, and the electric potential is proportional to the inverse of the distance; because the screening ions are at a greater distance from the surface, they contribute less positive potential.
 
-The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface for two different solution concentrations, $$C_{0}=1/N$$ mol/m$$^{3}$$, and $$C_{0}=100/N$$ mol/m$$^{3}$$. 
+The following two plots show the electrostatic potential and ion number densities as a function of distance from the charged surface for two different solution concentrations, $$C_{0}=1/N$$ mol/m$$^{3}$$, and $$C_{0}=100/N$$ mol/m$$^{3}$$.
 
 <div style="text-align:center">
 <img src="http://tphinkle.github.io/files/2017-1-3-nanopores_pt0/potential_1.png" alt="potential" style="width: 480px;" align="middle"/>

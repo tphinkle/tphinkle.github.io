@@ -200,11 +200,33 @@ Below I have a random sampling of images taken from the custom digits after proc
 ![Hand-written zero](https://raw.githubusercontent.com/tphinkle/tphinkle.github.io/master/images/2017-8-15/mnist_mosaic.png)
 
 
-### 1. Model training
+### 3. Model training
 
-Those that have used sklearn before will be familiar with this part. For those that aren't, training a model is as simple as creating a blank model `model` object, and then fitting the model to the training data using `model.fit(data)`.
+Phew. Finally we're on to the machine learning part of this thing. First we'll load the data set, then we're going to use the `LogisticRegression` class from the `sklearn.linear_model` module to train a logistic regression model. If you've used `sklearn` before, you know how easy this is. Here's the code (including the loading part):
 
-Here's the code snippet to load in the entire MNIST data set and train it using a logistic regression model. I set `C=1e10` as an optional argument in the logistic regression constructor so that the model would be unregularized (perhaps a topic for another blog post).
+```
+# Load data
+file_path = './mnist_digits.csv'
+data = np.genfromtxt(file_path, delimiter = ',')
+
+# Split into features/outputs
+X = data[:,1:]
+y = data[:,0]
+
+# Create and train the model
+model = sklearn.linear_model.LogisticRegression(C=1e10)
+model.fit(X, y)
+```
+
+Easy peasy. I should note that I didn't want to use regularization here, so I set C to an arbitrarily large number so that the feature weights weren't penalized at all.
+
+### 4. Model testing
+
+Ok, now the part we've been waiting for. I'll go over the model's predictions, its accuracy on each of the digit types, and uncover any underlying trends that I find.
+
+        
+
+
 
 
 ### 4. Testing the model!
