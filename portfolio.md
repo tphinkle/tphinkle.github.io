@@ -13,8 +13,8 @@ Shelfie is an interactive web app that automatically catalogues and prices books
 I built shelfie in early 2018 in a little over 3 weeks during my time as a fellow at [Insight data science](https://insightdatascience.com). The whole thing is built in Python (with just a bit of SQL), and the web app was made with the Flask framework. It uses machine learning, image processing techniques, and natural language processing for its algorithms.
 
 <div style="text-align:center">
-<img src="http://tphinkle.github.io/images/portfolio/shelfie/annotated_segmented.png" alt$
-<figcaption><em>Image:</em> Program interface. The top plot is a measured devic$
+<img src="http://tphinkle.github.io/images/portfolio/shelfie/annotated_segmented.png" alt="shelfie">
+<figcaption><em>Image:</em> Detection of the text on a book spine using _shelfie_.</figcaption>
 </div>
 <br>
 
