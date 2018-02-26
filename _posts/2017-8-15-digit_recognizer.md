@@ -1,4 +1,12 @@
-# Detecting *real* hand-written digits with machine learning
+---
+layout: post
+title: Detecting real hand-written digits with machine learning
+category: Data science, machine learning
+comments: True
+---
+
+
+ Detecting *real* hand-written digits with machine learning
 
 One of the first applications a novice machine learning student will encounter is the digit recognizer. It's a really cool application, and a good demonstration of how machine learning can have real world applications. I think the visual aspect really strikes a chord with people too; a lot of machine learning examples are about making abstract predictions that have little tangible meaning, but in this case the results are clearly visible. However cool the digit recognizer example is, one thing that could be improved is showing its real world implications. In the digit recognizer problem we build a model that *can* detect hand-written digits, but this idea is never realized with actual hand-written digits. Here's an example of a digit from the MNIST data set plotted as a grayscale matrix. For this particular data set, digits are represented as 28x28 single-byte grayscale values. The trouble is that they don't really resemble hand-written digits.
 
